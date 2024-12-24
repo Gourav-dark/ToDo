@@ -1,0 +1,155 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\GS_Practice\\AppDev\\ToDo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AF34D7-3791-41A3-851A-B1EC000905F6}|ToDo.Shared\\ToDo.Shared.csproj|c:\\gs_practice\\appdev\\todo\\todo.shared\\dto\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AF34D7-3791-41A3-851A-B1EC000905F6}|ToDo.Shared\\ToDo.Shared.csproj|solutionrelative:todo.shared\\dto\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|c:\\gs_practice\\appdev\\todo\\todo.ui\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|solutionrelative:todo.ui\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AF34D7-3791-41A3-851A-B1EC000905F6}|ToDo.Shared\\ToDo.Shared.csproj|c:\\gs_practice\\appdev\\todo\\todo.shared\\services\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AF34D7-3791-41A3-851A-B1EC000905F6}|ToDo.Shared\\ToDo.Shared.csproj|solutionrelative:todo.shared\\services\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AF34D7-3791-41A3-851A-B1EC000905F6}|ToDo.Shared\\ToDo.Shared.csproj|c:\\gs_practice\\appdev\\todo\\todo.shared\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AF34D7-3791-41A3-851A-B1EC000905F6}|ToDo.Shared\\ToDo.Shared.csproj|solutionrelative:todo.shared\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AF34D7-3791-41A3-851A-B1EC000905F6}|ToDo.Shared\\ToDo.Shared.csproj|c:\\gs_practice\\appdev\\todo\\todo.shared\\todo.shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F4AF34D7-3791-41A3-851A-B1EC000905F6}|ToDo.Shared\\ToDo.Shared.csproj|solutionrelative:todo.shared\\todo.shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|c:\\gs_practice\\appdev\\todo\\todo.ui\\todo.ui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|solutionrelative:todo.ui\\todo.ui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4AF34D7-3791-41A3-851A-B1EC000905F6}|ToDo.Shared\\ToDo.Shared.csproj|c:\\gs_practice\\appdev\\todo\\todo.shared\\models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4AF34D7-3791-41A3-851A-B1EC000905F6}|ToDo.Shared\\ToDo.Shared.csproj|solutionrelative:todo.shared\\models\\todoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoryDTO.cs",
+              "DocumentMoniker": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.Shared\\DTO\\CategoryDTO.cs",
+              "RelativeDocumentMoniker": "ToDo.Shared\\DTO\\CategoryDTO.cs",
+              "ToolTip": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.Shared\\DTO\\CategoryDTO.cs",
+              "RelativeToolTip": "ToDo.Shared\\DTO\\CategoryDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T15:32:44.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DataService.cs",
+              "DocumentMoniker": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.Shared\\Services\\DataService.cs",
+              "RelativeDocumentMoniker": "ToDo.Shared\\Services\\DataService.cs",
+              "ToolTip": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.Shared\\Services\\DataService.cs",
+              "RelativeToolTip": "ToDo.Shared\\Services\\DataService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T15:04:09.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ToDo.Shared",
+              "DocumentMoniker": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.Shared\\ToDo.Shared.csproj",
+              "RelativeDocumentMoniker": "ToDo.Shared\\ToDo.Shared.csproj",
+              "ToolTip": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.Shared\\ToDo.Shared.csproj",
+              "RelativeToolTip": "ToDo.Shared\\ToDo.Shared.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-24T14:58:05.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{db388bf8-d8ab-4d02-9b1c-0ad37b3db1b0}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.Shared\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ToDo.Shared\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.Shared\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ToDo.Shared\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T14:58:20.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ToDo.UI",
+              "DocumentMoniker": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\ToDo.UI.csproj",
+              "RelativeDocumentMoniker": "ToDo.UI\\ToDo.UI.csproj",
+              "ToolTip": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\ToDo.UI.csproj",
+              "RelativeToolTip": "ToDo.UI\\ToDo.UI.csproj",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-24T14:50:44.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "ToDo.UI\\MauiProgram.cs",
+              "ToolTip": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\MauiProgram.cs",
+              "RelativeToolTip": "ToDo.UI\\MauiProgram.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T14:44:30.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TodoItem.cs",
+              "DocumentMoniker": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.Shared\\Models\\TodoItem.cs",
+              "RelativeDocumentMoniker": "ToDo.Shared\\Models\\TodoItem.cs",
+              "ToolTip": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.Shared\\Models\\TodoItem.cs",
+              "RelativeToolTip": "ToDo.Shared\\Models\\TodoItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T14:24:34.975Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
