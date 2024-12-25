@@ -1,6 +1,9 @@
-﻿namespace ToDo.Shared.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ToDo.Shared.Models;
 public class DailyTaskPerformance
 {
+    [Key]
     public int PerformanceId { get; set; }
     public DateTime TaskDate { get; set; }
     public int TotalTasks { get; set; } = 0;

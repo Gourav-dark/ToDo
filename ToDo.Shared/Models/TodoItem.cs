@@ -1,4 +1,6 @@
-﻿namespace ToDo.Shared.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ToDo.Shared.Models;
 public enum TodoStatus
 {
     Pending,
@@ -15,6 +17,7 @@ public enum TodoPriority
 }
 public class TodoItem
 {
+    [Key]
     public int TodoId { get; set; }
     public string Title { get; set; } = string.Empty;
     public string? Description { get; set; }

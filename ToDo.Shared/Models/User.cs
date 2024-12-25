@@ -1,4 +1,6 @@
-﻿namespace ToDo.Shared.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ToDo.Shared.Models;
 public enum UserType
 {
     Admin,
@@ -7,6 +9,7 @@ public enum UserType
 }
 public class User
 {
+    [Key]
     public string UserId { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string Password { get; set; } = string.Empty;

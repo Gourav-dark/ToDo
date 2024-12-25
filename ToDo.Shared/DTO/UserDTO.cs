@@ -1,6 +1,12 @@
-﻿namespace ToDo.Shared.DTO;
+﻿using System.ComponentModel.DataAnnotations;
+using ToDo.Shared.Models;
+
+namespace ToDo.Shared.DTO;
 public class UserDTO
 {
-    public string Email { get; set; }=string.Empty;
-    public string Password { get; set; } = string.Empty;
+    [Required]
+    public string Email { get; set; }
+    [Required]
+    public string Password { get; set; }
+    public UserType UserType { get; set; }
 }

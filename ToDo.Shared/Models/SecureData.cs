@@ -1,7 +1,9 @@
-﻿namespace ToDo.Shared.Models;
+﻿using System.ComponentModel.DataAnnotations;
 
+namespace ToDo.Shared.Models;
 public class SecureData
 {
+    [Key]
     public int Id { get; set; }
     public string? SiteName { get; set; } = string.Empty;
     public string? Email { get; set; } = string.Empty;

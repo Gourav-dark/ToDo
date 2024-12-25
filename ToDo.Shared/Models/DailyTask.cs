@@ -1,6 +1,9 @@
-﻿namespace ToDo.Shared.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ToDo.Shared.Models;
 public class DailyTask
 {
+    [Key]
     public int TaskId { get; set; }
     public string Title { get; set; } = string.Empty;
     public string? Description { get; set; }

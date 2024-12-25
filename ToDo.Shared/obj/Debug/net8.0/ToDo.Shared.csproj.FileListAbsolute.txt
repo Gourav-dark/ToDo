@@ -1,0 +1,12 @@
+C:\GS_Practice\AppDev\ToDo\ToDo.Shared\bin\Debug\net8.0\ToDo.Shared.deps.json
+C:\GS_Practice\AppDev\ToDo\ToDo.Shared\bin\Debug\net8.0\ToDo.Shared.dll
+C:\GS_Practice\AppDev\ToDo\ToDo.Shared\bin\Debug\net8.0\ToDo.Shared.pdb
+C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\ToDo.Shared.csproj.AssemblyReference.cache
+C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\ToDo.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\ToDo.Shared.AssemblyInfoInputs.cache
+C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\ToDo.Shared.AssemblyInfo.cs
+C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\ToDo.Shared.csproj.CoreCompileInputs.cache
+C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\ToDo.Shared.dll
+C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\refint\ToDo.Shared.dll
+C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\ToDo.Shared.pdb
+C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\ref\ToDo.Shared.dll

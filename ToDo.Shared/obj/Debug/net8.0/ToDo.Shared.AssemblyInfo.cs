@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ToDo.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f720e41e4f93ae4dd27097ce283c2d6071507d5")]
 [assembly: System.Reflection.AssemblyProductAttribute("ToDo.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ToDo.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

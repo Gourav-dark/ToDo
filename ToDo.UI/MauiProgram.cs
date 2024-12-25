@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using ToDo.Shared.Data;
 using ToDo.Shared.Services;
+using ToDo.UI.Services;
 
 namespace ToDo.UI
 {
@@ -34,6 +35,7 @@ namespace ToDo.UI
             }
             // Register Generic DataService
             builder.Services.AddScoped(typeof(IDataService<,>), typeof(DataService<,>));
+            builder.Services.AddScoped<IUserService, UserService>();
 
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();

@@ -1,5 +1,83 @@
 ﻿@page "/"
+@inject IUserService _userService
 
-<h1>Hello, world!</h1>
+<h1>User Management</h1>
 
-Welcome to your new app.
+<!-- Button to Register a User with User Type "Guest" -->
+<button @onclick="RegisterGuestUser">Register Guest User</button>
+
+<!-- Form to Create a New User -->
+<h3>Create New User</h3>
+<EditForm Model="newUser" OnValidSubmit="CreateUser">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label>Email:</label>
+        <InputText @bind-Value="newUser.Email" />
+    </div>
+    <div>
+        <label>Password:</label>
+        <InputText @bind-Value="newUser.Password" type="password" />
+    </div>
+    
+    <button type="submit">Create User</button>
+</EditForm>
+
+<hr />
+
+<!-- Display All Users -->
+<h3>All Users</h3>
+@if (users == null)
+{
+    <p>Loading...</p>
+}
+else if (users.Count == 0)
+{
+    <p>No users available.</p>
+}
+else
+{
+    <ul>
+        @foreach (var user in users)
+        {
+            <li>@user.Email - @user.UserType</li>
+        }
+    </ul>
+}
+
+@code {
+    private List<User> users = new();
+    private UserDTO newUser = new UserDTO();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadUsersAsync();
+    }
+
+    private async Task LoadUsersAsync()
+    {
+        users = (await _userService.GetAll()).ToList();
+    }
+
+    private async Task RegisterGuestUser()
+    {
+        var guestUser = new UserDTO
+            {
+                Email = "guest@example.com",
+                Password = "defaultpassword",
+                UserType = UserType.Guest
+            };
+
+        await _userService.Register(guestUser);
+        await LoadUsersAsync();
+    }
+
+    private async Task CreateUser()
+    {
+        newUser.UserType = UserType.Admin;
+        await _userService.Register(newUser);
+        newUser = new UserDTO(); // Reset form
+        await LoadUsersAsync();
+    }
+}
