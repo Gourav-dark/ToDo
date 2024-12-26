@@ -1,0 +1,28 @@
+﻿@inject ICategoryService _categoryService
+<div class="text-white bg-danger">
+    <h1>Data Feching in Category</h1>
+    @if (categories == null || categories.Count() == 0)
+    {
+        <p>Not data Found</p>
+    }
+    else
+    {
+        @foreach (var category in categories)
+        {
+            <p>@category.CategoryId</p>
+            <p>@category.Name</p>
+            <p>@category.UserId</p>
+        }
+    }
+</div>
+@code {
+    List<Category> categories = new List<Category>();
+    protected override async Task OnInitializedAsync()
+    {
+        await DataFetch();
+    }
+    public async Task DataFetch()
+    {
+        categories = await _categoryService.GetAll();
+    }
+}

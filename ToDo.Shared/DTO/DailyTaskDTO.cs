@@ -3,7 +3,7 @@
 namespace ToDo.Shared.DTO;
 public class DailyTaskDTO
 {
-   
+    public string? UserId { get; set; } = null;
     public int CategoryId { get; set; }
     public string Title { get; set; } = string.Empty;
 

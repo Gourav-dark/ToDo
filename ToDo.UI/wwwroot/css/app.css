@@ -84,3 +84,24 @@ h1:focus {
         padding-left: env(safe-area-inset-left);
     }
 }
+/*My Code Start from here*/
+:root {
+    --primary: #8687E7;
+    --dark: #121212;
+    --white: #FFFFFF;
+    --light-white: #979797;
+}
+body {
+    background-color: var(--dark);
+    color: var(--white);
+}
+.fs-0{
+    font-size:40px;
+}
+
+.fs-7{
+    font-size:12px;
+}
+.py-2-5{
+    padding:.8rem 0;
+}

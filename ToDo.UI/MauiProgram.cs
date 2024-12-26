@@ -36,6 +36,7 @@ namespace ToDo.UI
             // Register Generic DataService
             builder.Services.AddScoped(typeof(IDataService<,>), typeof(DataService<,>));
             builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();

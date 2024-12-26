@@ -69,4 +69,9 @@
       <ProjectReference Include="..\ToDo.Shared\ToDo.Shared.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Components\Pages\Profile\" />
+      <Folder Include="Components\Pages\Splash\" />
+    </ItemGroup>
+
 </Project>

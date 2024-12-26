@@ -29,5 +29,16 @@ public class ApplicationDbContext : DbContext
             .Property(x => x.UserType)
             .HasConversion<string>()
             .HasMaxLength(50);
+        modelBuilder.Entity<Category>().HasData(
+            new Category { CategoryId = 1, Name = "Personal", UserId = null },
+            new Category { CategoryId = 2, Name = "Home", UserId = null },
+            new Category { CategoryId = 3, Name = "Work", UserId = null },
+            new Category { CategoryId = 4, Name = "Sport", UserId = null },
+            new Category { CategoryId = 5, Name = "Music", UserId = null },
+            new Category { CategoryId = 6, Name = "Movie", UserId = null },
+            new Category { CategoryId = 7, Name = "Grocery", UserId = null },
+            new Category { CategoryId = 8, Name = "Education", UserId = null },
+            new Category { CategoryId = 9, Name = "Others", UserId = null }
+            );
     }
 }
