@@ -1,0 +1,38 @@
+﻿@inject NavigationManager _navManager;
+
+<div class="position-fixed bottom-0 start-0 w-100 text-white d-flex justify-content-around align-items-center zindex-dropdown footer">
+    <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+        <i id="home" class="bi @(IsActive("/") ? "bi-house-door-fill" : "bi-house-door") icon-size click-effect"></i>
+    </NavLink>
+    <NavLink class="nav-link" href="todo">
+        <i id="todo" class="bi @(IsActive("/todo") ? "bi-clipboard2-check-fill" : "bi-clipboard2-check") icon-size click-effect"></i>
+    </NavLink>
+    <div class="position-relative bottom-50" @onclick="RotateIcon">
+        <i id="plus" class="bi bi-plus-circle-fill d-inline-flex icon-size-1 @(isRotating ? "rotate" : "")"></i>
+    </div>
+    <NavLink class="nav-link" href="counter">
+        <i id="counter" class="bi @(IsActive("/counter") ? "bi-file-earmark-lock2-fill" : "bi-file-earmark-lock2") icon-size click-effect"></i>
+    </NavLink>
+    <NavLink class="nav-link" href="weather">
+        <i id="weather" class="bi @(IsActive("/weather") ? "bi-person-fill" : "bi-person") icon-size click-effect"></i>
+    </NavLink>
+</div>
+
+@code {
+    private bool isRotating = false;
+
+    private async Task RotateIcon()
+    {
+        isRotating = true;
+        StateHasChanged();
+        await Task.Delay(500);
+        isRotating = false;
+        StateHasChanged();
+    }
+    private bool IsActive(string route)
+    {
+        var currentUri = _navManager.Uri.Replace(_navManager.BaseUri, "").TrimEnd('/');
+        var normalizedRoute = route.Trim('/');
+        return string.Equals(currentUri, normalizedRoute, StringComparison.OrdinalIgnoreCase);
+    }
+}
