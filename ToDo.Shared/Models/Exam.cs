@@ -5,6 +5,7 @@ public class Exam
 {
     [Key]
     public int ExamId { get; set; }
+    [MaxLength(200)]
     public string ExamName { get; set; } = string.Empty;
     public DateTime ApplicationDeadline { get; set; }
     public DateTime ExamDate { get; set; }

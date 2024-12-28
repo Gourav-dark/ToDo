@@ -57,6 +57,6 @@ public class UserService : IUserService
 
     public async Task<IEnumerable<User>> GetAll()
     {
-        return await _data.GetAllAsync();
+        return await _data.GetAsync();
     }
 }

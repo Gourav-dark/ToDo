@@ -38,7 +38,7 @@ public class CategoryService:ICategoryService
 
     public async Task<List<Category>> GetAll()
     {
-        List<Category> list = await _data.GetAllAsync();
+        List<Category> list = await _data.GetAsync();
         return list;
     }
 
@@ -49,7 +49,7 @@ public class CategoryService:ICategoryService
 
     public async Task<List<Category>> GetByUserId(string userId)
     {
-        List<Category> list = await _data.FindAsync(c=>c.UserId==userId || c.UserId==null);
+        List<Category> list = await _data.GetAsync(c=>c.UserId==userId || c.UserId==null);
         return list;
     }
 
