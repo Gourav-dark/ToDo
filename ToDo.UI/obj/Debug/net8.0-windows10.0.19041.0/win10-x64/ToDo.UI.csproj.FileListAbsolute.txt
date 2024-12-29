@@ -8,6 +8,7 @@ C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-windows10.0.19041.0\win10-x6
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Authorization.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Components.dll
+C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Components.Authorization.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Components.Forms.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Components.Web.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Components.WebView.dll
@@ -139,6 +140,11 @@ C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x6
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauisplash.stamp
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauifont.stamp
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf
+C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png
+C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png
+C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png
+C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png
+C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png
@@ -185,16 +191,12 @@ C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x6
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico
-C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png
-C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png
-C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png
-C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png
-C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauiimage.stamp
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauiimage.outputs
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ToDo.UI.AssemblyInfoInputs.cache
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ToDo.UI.AssemblyInfo.cs
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ToDo.UI.csproj.CoreCompileInputs.cache
+C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ToDo.UI.sourcelink.json
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\XamlC.stamp
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ToDo.UI.csproj.Up2Date
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ToDo.UI.dll

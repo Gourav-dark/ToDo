@@ -1,6 +1,13 @@
 ﻿@page "/profile"
+@attribute [Authorize]
+@inject IAuthService _userService;
+@inject NavigationManager _navManager;
 <h3>ProfilePage</h3>
-
+<button class="btn btn-danger" @onclick="()=>Logout()">Logout</button>
 @code {
-
+    private async void Logout()
+    {
+        await _userService.Logout();
+        _navManager.NavigateTo("/");
+    }
 }

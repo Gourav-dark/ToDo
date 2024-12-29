@@ -1,4 +1,5 @@
 ﻿@page "/securedata"
+@attribute [Authorize]
 @inject ISecureDataService _secureDataService
 <div class="px-2">
     @if (secureDatas == null || secureDatas.Count == 0)

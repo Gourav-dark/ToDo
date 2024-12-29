@@ -6,6 +6,7 @@ C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\ToDo.Shared.GeneratedMSB
 C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\ToDo.Shared.AssemblyInfoInputs.cache
 C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\ToDo.Shared.AssemblyInfo.cs
 C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\ToDo.Shared.csproj.CoreCompileInputs.cache
+C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\ToDo.Shared.sourcelink.json
 C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\ToDo.Shared.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\refint\ToDo.Shared.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.Shared\obj\Debug\net8.0\ToDo.Shared.pdb

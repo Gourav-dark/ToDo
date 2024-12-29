@@ -1,4 +1,12 @@
 ﻿@page "/"
-@code{
+<AuthorizeView>
+    <Authorized>
+        <TaskPage/>
+    </Authorized>
+    <NotAuthorized>
+        <AuthPage />
+    </NotAuthorized>
+</AuthorizeView>
 
+@code {
 }

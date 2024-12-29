@@ -133,6 +133,7 @@ C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\ToDo.UI.GeneratedMSB
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\ToDo.UI.AssemblyInfoInputs.cache
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\ToDo.UI.AssemblyInfo.cs
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\ToDo.UI.csproj.CoreCompileInputs.cache
+C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\ToDo.UI.sourcelink.json
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\XamlC.stamp
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\ToDo.UI.csproj.Up2Date
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\ToDo.UI.dll
@@ -168,6 +169,7 @@ C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\android\assets\ja\Mi
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\android\assets\Jsr305Binding.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\android\assets\ko\Microsoft.Maui.Controls.resources.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\android\assets\Microsoft.AspNetCore.Authorization.dll
+C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\android\assets\Microsoft.AspNetCore.Components.Authorization.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\android\assets\Microsoft.AspNetCore.Components.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\android\assets\Microsoft.AspNetCore.Components.Forms.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\android\assets\Microsoft.AspNetCore.Components.Web.dll

@@ -1,9 +1,17 @@
 ﻿@inherits LayoutComponentBase
 <!-- Header -->
-<HeaderLayout/>
+<AuthorizeView>
+    <Authorized>
+        <HeaderLayout/>
+    </Authorized>
+</AuthorizeView>
 <!-- Content -->
 <div class="content px-2">
     @Body
 </div>
 <!-- Footer -->
-<FooterLayout/>
+<AuthorizeView>
+    <Authorized>
+        <FooterLayout/>
+    </Authorized>
+</AuthorizeView>

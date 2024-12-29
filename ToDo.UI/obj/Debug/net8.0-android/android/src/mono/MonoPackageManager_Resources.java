@@ -6,6 +6,7 @@ public class MonoPackageManager_Resources {
 		"GoogleGson.dll",
 		"Microsoft.AspNetCore.Authorization.dll",
 		"Microsoft.AspNetCore.Components.dll",
+		"Microsoft.AspNetCore.Components.Authorization.dll",
 		"Microsoft.AspNetCore.Components.Forms.dll",
 		"Microsoft.AspNetCore.Components.Web.dll",
 		"Microsoft.AspNetCore.Components.WebView.dll",

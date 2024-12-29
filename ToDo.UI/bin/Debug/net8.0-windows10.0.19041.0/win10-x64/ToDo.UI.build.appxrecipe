@@ -73,6 +73,21 @@
     <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
+      <PackagePath>dotnet_bot.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
+      <PackagePath>dotnet_bot.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
+      <PackagePath>dotnet_bot.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
+      <PackagePath>dotnet_bot.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
+      <PackagePath>dotnet_bot.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
     </AppxPackagedFile>
@@ -211,21 +226,6 @@
     <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
-      <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
-      <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
-      <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
-      <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
-      <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ToDo.UI.deps.json">
       <PackagePath>ToDo.UI.deps.json</PackagePath>
     </AppxPackagedFile>
@@ -235,11 +235,14 @@
     <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.34\lib\net6.0\WinRT.Runtime.dll">
       <PackagePath>WinRT.Runtime.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.aspnetcore.authorization\8.0.0\lib\net8.0\Microsoft.AspNetCore.Authorization.dll">
+    <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.aspnetcore.authorization\8.0.5\lib\net8.0\Microsoft.AspNetCore.Authorization.dll">
       <PackagePath>Microsoft.AspNetCore.Authorization.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.aspnetcore.components\8.0.0\lib\net8.0\Microsoft.AspNetCore.Components.dll">
+    <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.aspnetcore.components\8.0.5\lib\net8.0\Microsoft.AspNetCore.Components.dll">
       <PackagePath>Microsoft.AspNetCore.Components.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.aspnetcore.components.authorization\8.0.5\lib\net8.0\Microsoft.AspNetCore.Components.Authorization.dll">
+      <PackagePath>Microsoft.AspNetCore.Components.Authorization.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.aspnetcore.components.forms\8.0.0\lib\net8.0\Microsoft.AspNetCore.Components.Forms.dll">
       <PackagePath>Microsoft.AspNetCore.Components.Forms.dll</PackagePath>
@@ -253,7 +256,7 @@
     <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.aspnetcore.components.webview.maui\8.0.82\lib\net8.0-windows10.0.19041\Microsoft.AspNetCore.Components.WebView.Maui.dll">
       <PackagePath>Microsoft.AspNetCore.Components.WebView.Maui.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.aspnetcore.metadata\8.0.0\lib\net8.0\Microsoft.AspNetCore.Metadata.dll">
+    <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.aspnetcore.metadata\8.0.5\lib\net8.0\Microsoft.AspNetCore.Metadata.dll">
       <PackagePath>Microsoft.AspNetCore.Metadata.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.data.sqlite.core\8.0.5\lib\net8.0\Microsoft.Data.Sqlite.dll">
@@ -295,7 +298,7 @@
     <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.extensions.dependencyinjection\8.0.0\lib\net8.0\Microsoft.Extensions.DependencyInjection.dll">
       <PackagePath>Microsoft.Extensions.DependencyInjection.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\8.0.0\lib\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll">
+    <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\8.0.1\lib\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll">
       <PackagePath>Microsoft.Extensions.DependencyInjection.Abstractions.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.extensions.dependencymodel\8.0.0\lib\net8.0\Microsoft.Extensions.DependencyModel.dll">
@@ -319,13 +322,13 @@
     <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.extensions.logging\8.0.0\lib\net8.0\Microsoft.Extensions.Logging.dll">
       <PackagePath>Microsoft.Extensions.Logging.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.extensions.logging.abstractions\8.0.0\lib\net8.0\Microsoft.Extensions.Logging.Abstractions.dll">
+    <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.extensions.logging.abstractions\8.0.1\lib\net8.0\Microsoft.Extensions.Logging.Abstractions.dll">
       <PackagePath>Microsoft.Extensions.Logging.Abstractions.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.extensions.logging.debug\8.0.0\lib\net8.0\Microsoft.Extensions.Logging.Debug.dll">
       <PackagePath>Microsoft.Extensions.Logging.Debug.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.extensions.options\8.0.0\lib\net8.0\Microsoft.Extensions.Options.dll">
+    <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.extensions.options\8.0.2\lib\net8.0\Microsoft.Extensions.Options.dll">
       <PackagePath>Microsoft.Extensions.Options.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\2270340\.nuget\packages\microsoft.extensions.primitives\8.0.0\lib\net8.0\Microsoft.Extensions.Primitives.dll">

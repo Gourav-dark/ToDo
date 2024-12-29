@@ -3,6 +3,7 @@ C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\ToDo.UI.pdb
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.AspNetCore.Authorization.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.AspNetCore.Components.dll
+C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.AspNetCore.Components.Authorization.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.AspNetCore.Components.Forms.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.AspNetCore.Components.Web.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.AspNetCore.Components.WebView.dll
@@ -334,6 +335,7 @@ C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\ToDo.UI.AssemblyInfo.cs
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\ToDo.UI.csproj.CoreCompileInputs.cache
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\ToDo.UI.MvcApplicationPartsAssemblyInfo.cache
+C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\ToDo.UI.sourcelink.json
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\XamlC.stamp
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\ToDo.UI.csproj.Up2Date
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\ToDo.UI.dll

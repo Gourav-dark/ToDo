@@ -1,4 +1,5 @@
 ﻿@page "/dailytasks"
+@attribute [Authorize]
 @inject ITaskService _taskService
 <div class="px-2">
     @if (dailyTasks == null || dailyTasks.Count == 0)

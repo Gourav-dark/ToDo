@@ -3,6 +3,7 @@ C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-ios\iossimulator-x64\ToDo.UI
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-ios\iossimulator-x64\ToDo.UI.pdb
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.AspNetCore.Authorization.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.AspNetCore.Components.dll
+C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.AspNetCore.Components.Authorization.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.AspNetCore.Components.Forms.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.AspNetCore.Components.Web.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.AspNetCore.Components.WebView.dll
@@ -290,7 +291,6 @@ C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-ios\iossimulator-x64\libxama
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet.dylib
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-ios\iossimulator-x64\ToDo.Shared.dll
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\bin\Debug\net8.0-ios\iossimulator-x64\ToDo.Shared.pdb
-C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-ios\iossimulator-x64\build-signature\signature
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-ios\iossimulator-x64\staticwebassets.build.json
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-ios\iossimulator-x64\staticwebassets.development.json
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-ios\iossimulator-x64\staticwebassets\msbuild.ToDo.UI.Microsoft.AspNetCore.StaticWebAssets.props
@@ -347,6 +347,7 @@ C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-ios\iossimulator-x64\ToDo.UI
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-ios\iossimulator-x64\ToDo.UI.AssemblyInfo.cs
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-ios\iossimulator-x64\ToDo.UI.csproj.CoreCompileInputs.cache
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-ios\iossimulator-x64\ToDo.UI.MvcApplicationPartsAssemblyInfo.cache
+C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-ios\iossimulator-x64\ToDo.UI.sourcelink.json
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-ios\iossimulator-x64\XamlC.stamp
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-ios\iossimulator-x64\ToDo.UI.csproj.Up2Date
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-ios\iossimulator-x64\ToDo.UI.dll

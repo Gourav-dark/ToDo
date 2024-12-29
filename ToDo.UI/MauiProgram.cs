@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ToDo.Shared.Data;
 using ToDo.Shared.Services;
+using ToDo.UI.Authentication;
 using ToDo.UI.Services;
 
 namespace ToDo.UI
@@ -33,9 +35,13 @@ namespace ToDo.UI
                 var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
                 dbContext.Database.EnsureCreated(); // Creates the database if it doesn't exist
             }
+            //Authentication
+            builder.Services.AddAuthorizationCore();
+            builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+            builder.Services.AddScoped<CustomAuthenticationStateProvider>();
             // Register Generic DataService
             builder.Services.AddScoped(typeof(IDataService<,>), typeof(DataService<,>));
-            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
             builder.Services.AddScoped<ITaskService, TaskService>();
             builder.Services.AddScoped<ISecureDataService, SecureDataService>();

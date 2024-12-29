@@ -1,4 +1,5 @@
-﻿@inject ICategoryService _categoryService
+﻿@attribute [Authorize]
+@inject ICategoryService _categoryService
 <div class="text-white bg-danger">
     <h1>Data Feching in Category</h1>
     @if (categories == null || categories.Count() == 0)

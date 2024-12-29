@@ -1,15 +1,31 @@
 ﻿@page "/auth"
+@inject NavigationManager _navManager;
+
 <div class="text-white d-flex flex-column justify-content-between min-vh-100">
     <div class="text-center mt-5 pt-4">
         <p class="text-white fs-0">Welcome to App</p>
-        <p class="mt-4 fs-5">Please login to your account or create new account to continue</p>
+        <p class="mt-4 fs-5">Please login to your account or create a new account to continue</p>
     </div>
-    <div class="text-center d-flex flex-column mb-5 pb-4 px-4">
-        <button class="btn btn-primary text-uppercase py-2-5 fs-4 mb-2" type="button">Login</button>
-        <button class="btn btn-outline-primary text-uppercase py-2-5 fs-4 mt-3" type="button">create account</button>
-        <a class="mt-3 text-white-50">Continue as a Guest</a>
+    <div class="text-center d-flex flex-column mb-5 pb-5 px-4">
+        <button class="btn btn-primary text-uppercase py-2-5 fs-4 mb-2" type="button" @onclick="LoginPage">Login</button>
+        <button class="btn btn-outline-primary text-uppercase py-2-5 fs-4 mt-3" type="button" @onclick="RegisterPage">Create Account</button>
+        <a class="mt-3 text-white-50" @onclick="GuestAccess">Continue as a Guest</a>
     </div>
 </div>
-@code{
 
+@code {
+    private void LoginPage()
+    {
+        _navManager.NavigateTo("/login");
+    }
+
+    private void RegisterPage()
+    {
+        _navManager.NavigateTo("/register");
+    }
+
+    private void GuestAccess()
+    {
+        _navManager.NavigateTo("/guest");
+    }
 }

@@ -78,10 +78,10 @@ build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEYXNoYm9hcmRc
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/GS_Practice/AppDev/ToDo/ToDo.UI/Components/Pages/Dashboard/DailyTask.razor]
+[C:/GS_Practice/AppDev/ToDo/ToDo.UI/Components/Pages/Dashboard/DailyTaskPage.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEYXNoYm9hcmRcRGFpbHlUYXNrLnJhem9y
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEYXNoYm9hcmRcRGFpbHlUYXNrUGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 

@@ -1,8 +1,9 @@
 ﻿@page "/login"
-@inject IUserService _userService
+@inject NavigationManager _navManager;
+@inject IAuthService _userService
 <div class="mt-5 text-white px-3">
     <div class="mt-3">
-        <h1 class="fs-1">Login</h1>
+        <p class="fs-1">Login</p>
     </div>
     <div class="mt-5">
         <EditForm Model="login" OnValidSubmit="Login">
@@ -23,7 +24,7 @@
         </EditForm>
     </div>
     <div class="text-center mt-2">
-        <span class="fs-6 text-white-50">Don't have an account? </span><a>Register</a>
+        <span class="fs-6 text-white-50">Don't have an account? </span><a href="/register">Register</a>
     </div>
 </div>
 
@@ -32,6 +33,7 @@
 
     private async Task Login()
     {
-        string userId = await _userService.Login(login);
+        await _userService.Login(login);
+        _navManager.NavigateTo("/");
     }
 }
