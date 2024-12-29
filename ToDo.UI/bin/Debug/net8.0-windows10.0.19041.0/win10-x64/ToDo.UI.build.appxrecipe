@@ -550,9 +550,6 @@
     <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\Components\Layout\MainLayout.razor.css">
       <PackagePath>Components\Layout\MainLayout.razor.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GS_Practice\AppDev\ToDo\ToDo.UI\Components\Layout\NavMenu.razor.css">
-      <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
-    </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
     <ResolvedSDKReference Include="C:\Users\2270340\.nuget\packages\microsoft.windowsappsdk\1.5.240627000\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.5.msix">

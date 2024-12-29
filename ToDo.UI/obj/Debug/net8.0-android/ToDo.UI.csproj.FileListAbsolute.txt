@@ -19,7 +19,6 @@ C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\staticwebassets\msbu
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\staticwebassets\msbuild.buildTransitive.ToDo.UI.props
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\staticwebassets.pack.json
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
-C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\scopedcss\bundle\ToDo.UI.styles.css
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\scopedcss\projectbundle\ToDo.UI.bundle.scp.css
 C:\GS_Practice\AppDev\ToDo\ToDo.UI\obj\Debug\net8.0-android\staticwebassets.publish.json

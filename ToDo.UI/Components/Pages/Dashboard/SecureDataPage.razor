@@ -1,0 +1,65 @@
+﻿@page "/securedata"
+@inject ISecureDataService _secureDataService
+<div class="px-2">
+    @if (secureDatas == null || secureDatas.Count == 0)
+    {
+        <div class="text-center text-muted">
+            <p>Loading or No data found</p>
+        </div>
+    }
+    else
+    {
+        @foreach (var data in secureDatas)
+        {
+            <div class="bg-dark text-white mb-2 d-flex flex-column rounded-1 p-2 py-3">
+                <div class="w-100 px-2">
+                    <h5 class="text-capitalize mb-2 fs-5">@data.SiteName</h5>
+                    <p class="fs-6">Email: @data.Email</p>
+                </div>
+                <div class="input-group px-2">
+                    <input type="@(GetPasswordInputType(data))" class="form-control bg-dark text-white" @bind="@data.Password" readonly />
+                    <button class="btn btn-outline-dark border-light" type="button" @onclick="() => TogglePasswordVisibility(data.Id)">
+                        <i class="@(GetPasswordIcon(data.Id)) text-white"></i>
+                    </button>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+@code {
+    private List<SecureData> secureDatas = new();
+    private HashSet<int> visiblePasswords = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAsync();
+    }
+
+    private async Task LoadAsync()
+    {
+        secureDatas = await _secureDataService.GetAll();
+    }
+
+    private void TogglePasswordVisibility(int id)
+    {
+        if (visiblePasswords.Contains(id))
+        {
+            visiblePasswords.Remove(id);
+        }
+        else
+        {
+            visiblePasswords.Add(id);
+        }
+    }
+
+    private string GetPasswordInputType(SecureData data)
+    {
+        return visiblePasswords.Contains(data.Id) ? "text" : "password";
+    }
+
+    private string GetPasswordIcon(int id)
+    {
+        return visiblePasswords.Contains(id) ? "bi bi-eye-slash" : "bi bi-eye";
+    }
+}

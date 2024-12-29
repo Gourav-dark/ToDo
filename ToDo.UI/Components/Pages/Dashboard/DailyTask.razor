@@ -1,5 +1,91 @@
-﻿<h3>DailyTask</h3>
+﻿@page "/dailytasks"
+@inject ITaskService _taskService
+<div class="px-2">
+    @if (dailyTasks == null || dailyTasks.Count == 0)
+    {
+        <p>Loading or No data found</p>
+    }
+    else
+    {
+        @foreach (var task in dailyTasks)
+        {
+            <div class="bg-dark text-white mb-2 d-flex align-items-center rounded-1 p-2" style="height:5rem;">
+                <!-- Checkbox -->
+                <div class="d-flex align-items-center justify-content-center mb-2 ms-1">
+                    <input class="form-check-input fs-2 bg-dark text-white border-secondary p-0"
+                           type="checkbox"
+                           id="IsCompleted"
+                           checked="@task.IsCompleted"
+                           @onchange="()=>ToggleTaskStatus(task.TaskId)" />
+                </div>
+
+                <!-- Task Details -->
+                <div class="w-100 ms-2 ps-1">
+                    <!-- Task Title -->
+                    <div class="fs-5 text-capitalize @GetTitleStyle(task)" style="font-weight:400;">
+                        @task.Title
+                    </div>
+                    <!-- Extra Information -->
+                    <div class="d-flex justify-content-between mt-1">
+                        <!-- Task Due Time -->
+                        <div class="fs-7 text-white-50">
+                            Due: @task.DueTime.ToString("MMM dd, yyyy")
+                        </div>
+                        <!-- Category Badge -->
+                        <div>
+                            <span class="fs-8 rounded p-1 font-weight-bold @GetPriorityClass(task.Priority) @GetTextColorClass(task.Priority)">
+                                @task.Priority
+                            </span>
+                            <span class="text-white px-2 py-1 rounded fs-6" style="background-color:@task.Category.ColorCode;">
+                                @task.Category.Name
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
 
 @code {
+    private List<TaskItem> dailyTasks = new();
 
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAsync();
+    }
+
+    private async Task LoadAsync()
+    {
+        dailyTasks = await _taskService.GetAllTasks();
+    }
+
+    private async Task ToggleTaskStatus(int taskId)
+    {
+        // Update the task on the server
+        await _taskService.ChangeStatus(taskId);
+
+        // Optionally, reload the tasks if needed
+        await LoadAsync();
+    }
+
+    private string GetPriorityClass(TodoPriority priority) => priority switch
+    {
+        TodoPriority.Critical => "bg-danger",
+        TodoPriority.High => "bg-warning",
+        TodoPriority.Medium => "bg-success",
+        TodoPriority.Low => "bg-info",
+        _ => "bg-info"
+    };
+
+    private string GetTextColorClass(TodoPriority priority) => priority switch
+    {
+        TodoPriority.Critical => "text-white",
+        TodoPriority.High => "text-black",
+        TodoPriority.Medium => "text-white",
+        TodoPriority.Low => "text-black",
+        _ => "text-white"
+    };
+
+    private string GetTitleStyle(TaskItem task) => task.IsCompleted ? "text-decoration-line-through" : "";
 }

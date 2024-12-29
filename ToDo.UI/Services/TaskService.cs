@@ -10,26 +10,25 @@ public interface ITaskService
     Task<List<TaskItem>> GetDailyTasksByUserId(string userId);
     Task<TaskItem> GetById(int taskId);
     Task<string> Add(TaskItemDTO obj);
-    Task<string> Update(TaskItemDTO obj);
-    Task<string> Delete(int taskId);
+    Task<bool> Update(int taskId,TaskItemDTO obj);
+    Task<bool> Delete(int taskId);
+    Task<bool> ChangeStatus(int taskId);
 }
 public class TaskService : ITaskService
 {
     private readonly IDataService<TaskItem, int> _data;
-    private readonly ICategoryService _categoryService;
-    public TaskService(IDataService<TaskItem, int> data, ICategoryService categoryService)
+    public TaskService(IDataService<TaskItem, int> data)
     {
         _data = data;
-        _categoryService = categoryService;
     }
     public Task<string> Add(TaskItemDTO obj)
     {
         throw new NotImplementedException();
     }
 
-    public Task<string> Delete(int taskId)
+    public Task<bool> Delete(int taskId)
     {
-        throw new NotImplementedException();
+        return _data.DeleteAsync(taskId);
     }
 
     public async Task<List<TaskItem>> GetAllTasks()
@@ -52,8 +51,28 @@ public class TaskService : ITaskService
         return await _data.GetAsync(x => x.UserId == userId && x.IsDailyTask==true);
     }
 
-    public Task<string> Update(TaskItemDTO obj)
+    public async Task<bool> Update(int taskId,TaskItemDTO obj)
     {
-        throw new NotImplementedException();
+        TaskItem taskItem = await GetById(taskId);
+        if(taskItem==null) 
+            return false;
+        taskItem.Title = obj.Title;
+        taskItem.Description = obj.Description;
+        taskItem.DueTime = obj.DueTime;
+        taskItem.Priority = obj.Priority;
+        taskItem.IsDailyTask = obj.IsDailyTask;
+        taskItem.CategoryId = obj.CategoryId;
+
+        await _data.UpdateAsync(taskItem);
+        return true;
+    }
+    public async Task<bool> ChangeStatus(int taskId)
+    {
+        TaskItem taskItem = await GetById(taskId);
+        if (taskItem == null)
+            return false;
+        taskItem.IsCompleted=!taskItem.IsCompleted;
+        await _data.UpdateAsync(taskItem);
+        return true;
     }
 }

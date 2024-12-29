@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using ToDo.Shared.Models;
 
-public enum TodoStatus
-{
-    Pending,
-    InProgress,
-    Completed,
-    Overdue
-}
+//public enum TodoStatus
+//{
+//    Pending,
+//    InProgress,
+//    Completed,
+//    Overdue
+//}
 public enum TodoPriority
 {
     Low,
@@ -24,7 +24,8 @@ public class TaskItem
     public string? Description { get; set; }
     public DateTime DueTime { get; set; }
     public TodoPriority Priority { get; set; } = TodoPriority.Medium;
-    public TodoStatus Status { get; set; } = TodoStatus.Pending;
+    //public TodoStatus Status { get; set; } = TodoStatus.Pending;
+    public bool IsCompleted { get; set; } = false;
     public bool IsDailyTask { get; set; } = false;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public string UserId { get; set; } = string.Empty;

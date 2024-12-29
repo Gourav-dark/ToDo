@@ -38,6 +38,7 @@ namespace ToDo.UI
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
             builder.Services.AddScoped<ITaskService, TaskService>();
+            builder.Services.AddScoped<ISecureDataService, SecureDataService>();
 
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();

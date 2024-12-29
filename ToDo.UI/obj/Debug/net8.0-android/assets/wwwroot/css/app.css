@@ -21,23 +21,29 @@ body {
 .fs-7{
     font-size:12px;
 }
+.fs-8 {
+    font-size: 10px;
+}
 .py-2-5{
     padding:.8rem 0;
 }
 .header {
     height: 60px;
+    z-index:1000;
 }
 .content {
     padding-top: 60px;
-    /*padding-bottom: 80px;
-    margin-bottom:80px;*/
-/*    height: calc(100vh - 140px);*/
+    padding-bottom: 80px;
+    /*    margin-bottom:80px;*/
+    /*    height: calc(100vh - 140px);*/
     overflow-y: auto;
-    height:calc(100vh);
+    height: calc(100vh);
+    z-index: 0;
 }
 .footer {
     background-color: #363636;
     height: 80px;
+    z-index: 1000;
 }
 
 .icon-size {

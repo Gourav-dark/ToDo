@@ -20,10 +20,10 @@ public class ApplicationDbContext : DbContext
             .Property(x => x.Priority)
             .HasConversion<string>()
             .HasMaxLength(50);
-        modelBuilder.Entity<TaskItem>()
-            .Property(x => x.Status)
-            .HasConversion<string>()
-            .HasMaxLength(50);
+        //modelBuilder.Entity<TaskItem>()
+        //    .Property(x => x.Status)
+        //    .HasConversion<string>()
+        //    .HasMaxLength(50);
         modelBuilder.Entity<User>()
             .Property(x => x.UserType)
             .HasConversion<string>()
@@ -45,12 +45,25 @@ public class ApplicationDbContext : DbContext
             new User { UserId = "1c63b500-e915-4430-8eaf-68a2983d92e7", Email="admin@gmail.com",Password="Admin@123",UserType=UserType.Admin,CreatedAt=DateTime.UtcNow, },
             new User { UserId = "026ff00a-4f70-474d-b118-df00c609f620", Email = "test@gmail.com", Password = "12345", UserType = UserType.User, CreatedAt = DateTime.UtcNow, }
         );
+        //modelBuilder.Entity<TaskItem>().HasData(
+        //    new TaskItem { TaskId = 1, Title = "Math Homework", Description = "", DueTime = DateTime.Now.AddDays(1), Priority = TodoPriority.Medium, Status = TodoStatus.Pending, IsDailyTask = false, CreatedAt = DateTime.UtcNow, CategoryId = 1, UserId = "026ff00a-4f70-474d-b118-df00c609f620" },
+        //    new TaskItem { TaskId = 2, Title = "Gym Training", Description = "6 AM To 7 AM", DueTime = DateTime.Now.AddDays(1), Priority = TodoPriority.High, Status = TodoStatus.Pending, IsDailyTask = true, CreatedAt = DateTime.UtcNow, CategoryId = 4, UserId = "026ff00a-4f70-474d-b118-df00c609f620" },
+        //    new TaskItem { TaskId = 3, Title = "Morning Walk", Description = "5 AM to 5:30 AM", DueTime = DateTime.Now.AddDays(1), Priority = TodoPriority.High, Status = TodoStatus.Pending, IsDailyTask = true, CreatedAt = DateTime.UtcNow, CategoryId = 4, UserId = "026ff00a-4f70-474d-b118-df00c609f620" },
+        //    new TaskItem { TaskId = 4, Title = "Client Meeting", Description = "7 PM To 8 PM", DueTime = DateTime.Now.AddDays(1), Priority = TodoPriority.High, Status = TodoStatus.Pending, IsDailyTask = true, CreatedAt = DateTime.UtcNow, CategoryId = 3, UserId = "026ff00a-4f70-474d-b118-df00c609f620" },
+        //    new TaskItem { TaskId = 5, Title = "Leet Code", Description = "", DueTime = DateTime.Now.AddDays(1), Priority = TodoPriority.High, Status = TodoStatus.Pending, IsDailyTask = true, CreatedAt = DateTime.UtcNow, CategoryId = 8, UserId = "026ff00a-4f70-474d-b118-df00c609f620" }
+        //    );
         modelBuilder.Entity<TaskItem>().HasData(
-            new TaskItem { TaskId = 1, Title = "Math Homework", Description = "", DueTime = DateTime.Now.AddDays(1), Priority = TodoPriority.Medium, Status = TodoStatus.Pending, IsDailyTask = false, CreatedAt = DateTime.UtcNow, CategoryId = 1, UserId = "026ff00a-4f70-474d-b118-df00c609f620" },
-            new TaskItem { TaskId = 2, Title = "Gym Training", Description = "6 AM To 7 AM", DueTime = DateTime.Now.AddDays(1), Priority = TodoPriority.High, Status = TodoStatus.Pending, IsDailyTask = true, CreatedAt = DateTime.UtcNow, CategoryId = 4, UserId = "026ff00a-4f70-474d-b118-df00c609f620" },
-            new TaskItem { TaskId = 3, Title = "Morning Walk", Description = "5 AM to 5:30 AM", DueTime = DateTime.Now.AddDays(1), Priority = TodoPriority.High, Status = TodoStatus.Pending, IsDailyTask = true, CreatedAt = DateTime.UtcNow, CategoryId = 4, UserId = "026ff00a-4f70-474d-b118-df00c609f620" },
-            new TaskItem { TaskId = 4, Title = "Client Meeting", Description = "7 PM To 8 PM", DueTime = DateTime.Now.AddDays(1), Priority = TodoPriority.High, Status = TodoStatus.Pending, IsDailyTask = true, CreatedAt = DateTime.UtcNow, CategoryId = 3, UserId = "026ff00a-4f70-474d-b118-df00c609f620" },
-            new TaskItem { TaskId = 5, Title = "Leet Code", Description = "", DueTime = DateTime.Now.AddDays(1), Priority = TodoPriority.High, Status = TodoStatus.Pending, IsDailyTask = true, CreatedAt = DateTime.UtcNow, CategoryId = 8, UserId = "026ff00a-4f70-474d-b118-df00c609f620" }
+            new TaskItem { TaskId = 1, Title = "Math Homework", Description = "", DueTime = DateTime.Now.AddDays(1), Priority = TodoPriority.Medium, IsCompleted=true, IsDailyTask = false, CreatedAt = DateTime.UtcNow, CategoryId = 1, UserId = "026ff00a-4f70-474d-b118-df00c609f620" },
+            new TaskItem { TaskId = 2, Title = "Gym Training", Description = "6 AM To 7 AM", DueTime = DateTime.Now.AddDays(1), Priority = TodoPriority.High, IsCompleted = true, IsDailyTask = true, CreatedAt = DateTime.UtcNow, CategoryId = 4, UserId = "026ff00a-4f70-474d-b118-df00c609f620" },
+            new TaskItem { TaskId = 3, Title = "Morning Walk", Description = "5 AM to 5:30 AM", DueTime = DateTime.Now.AddDays(1), Priority = TodoPriority.High, IsCompleted = false, IsDailyTask = true, CreatedAt = DateTime.UtcNow, CategoryId = 4, UserId = "026ff00a-4f70-474d-b118-df00c609f620" },
+            new TaskItem { TaskId = 4, Title = "Client Meeting", Description = "7 PM To 8 PM", DueTime = DateTime.Now.AddDays(1), Priority = TodoPriority.High, IsCompleted = true, IsDailyTask = true, CreatedAt = DateTime.UtcNow, CategoryId = 3, UserId = "026ff00a-4f70-474d-b118-df00c609f620" },
+            new TaskItem { TaskId = 5, Title = "Leet Code", Description = "", DueTime = DateTime.Now.AddDays(1), Priority = TodoPriority.High, IsCompleted = false, IsDailyTask = true, CreatedAt = DateTime.UtcNow, CategoryId = 8, UserId = "026ff00a-4f70-474d-b118-df00c609f620" }
+            );
+        modelBuilder.Entity<SecureData>().HasData(
+            new SecureData { Id = 1, SiteName = "LeetCode", Email = "abc@gamil.com", Password = "abc@123", UserId = "026ff00a-4f70-474d-b118-df00c609f620" },
+            new SecureData { Id = 2, SiteName = "HackerRank", Email = "abc@gamil.com", Password = "abc@123", UserId = "026ff00a-4f70-474d-b118-df00c609f620" },
+            new SecureData { Id = 3, SiteName = "ChatGPT", Email = "abc@gamil.com", Password = "abc@123", UserId = "026ff00a-4f70-474d-b118-df00c609f620" },
+            new SecureData { Id = 4, SiteName = "GitHub", Email = "abc@gamil.com", Password = "abc@123", UserId = "026ff00a-4f70-474d-b118-df00c609f620" }
             );
     }
 }
