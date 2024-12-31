@@ -1,5 +1,7 @@
 ﻿@page "/auth"
 @inject NavigationManager _navManager;
+@inject IAuthService _authService
+@inject LoadingService _loadingService
 
 <div class="text-white d-flex flex-column justify-content-between min-vh-100">
     <div class="text-center mt-5 pt-4">
@@ -9,7 +11,7 @@
     <div class="text-center d-flex flex-column mb-5 pb-5 px-4">
         <button class="btn btn-primary text-uppercase py-2-5 fs-4 mb-2" type="button" @onclick="LoginPage">Login</button>
         <button class="btn btn-outline-primary text-uppercase py-2-5 fs-4 mt-3" type="button" @onclick="RegisterPage">Create Account</button>
-        <a class="mt-3 text-white-50" @onclick="GuestAccess">Continue as a Guest</a>
+        <a class="mt-3 text-white-50" @onclick="GuestCreate">Continue as a Guest</a>
     </div>
 </div>
 
@@ -24,8 +26,10 @@
         _navManager.NavigateTo("/register");
     }
 
-    private void GuestAccess()
+    private void GuestCreate()
     {
-        _navManager.NavigateTo("/guest");
+        _loadingService.Show();
+        _authService.Register(new UserDTO() { UserType=UserType.Guest });
+        _loadingService.Hide();
     }
 }

@@ -3,32 +3,12 @@
   "WorkspaceRootPath": "C:\\GS_Practice\\AppDev\\ToDo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|c:\\gs_practice\\appdev\\todo\\todo.ui\\components\\pages\\auth\\registerpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|solutionrelative:todo.ui\\components\\pages\\auth\\registerpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|c:\\gs_practice\\appdev\\todo\\todo.ui\\components\\pages\\auth\\loginpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|solutionrelative:todo.ui\\components\\pages\\auth\\loginpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|c:\\gs_practice\\appdev\\todo\\todo.ui\\components\\shared\\loadingpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|solutionrelative:todo.ui\\components\\shared\\loadingpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|c:\\gs_practice\\appdev\\todo\\todo.ui\\components\\pages\\dashboard\\dailytaskpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|solutionrelative:todo.ui\\components\\pages\\dashboard\\dailytaskpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|c:\\gs_practice\\appdev\\todo\\todo.ui\\components\\pages\\dashboard\\categorypage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|solutionrelative:todo.ui\\components\\pages\\dashboard\\categorypage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|c:\\gs_practice\\appdev\\todo\\todo.ui\\components\\pages\\dashboard\\taskpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|solutionrelative:todo.ui\\components\\pages\\dashboard\\taskpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|c:\\gs_practice\\appdev\\todo\\todo.ui\\components\\pages\\dashboard\\todopage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|solutionrelative:todo.ui\\components\\pages\\dashboard\\todopage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|c:\\gs_practice\\appdev\\todo\\todo.ui\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1E8789A2-3613-48FE-A359-3C9A63BB89B7}|ToDo.UI\\ToDo.UI.csproj|solutionrelative:todo.ui\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,9 +17,13 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 394,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 514,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -57,94 +41,33 @@
               "Name": "ST:0:0:{db388bf8-d8ab-4d02-9b1c-0ad37b3db1b0}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RegisterPage.razor",
-              "DocumentMoniker": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Pages\\Auth\\RegisterPage.razor",
-              "RelativeDocumentMoniker": "ToDo.UI\\Components\\Pages\\Auth\\RegisterPage.razor",
-              "ToolTip": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Pages\\Auth\\RegisterPage.razor",
-              "RelativeToolTip": "ToDo.UI\\Components\\Pages\\Auth\\RegisterPage.razor",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD0AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-29T16:36:45.926Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LoginPage.razor",
-              "DocumentMoniker": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Pages\\Auth\\LoginPage.razor",
-              "RelativeDocumentMoniker": "ToDo.UI\\Components\\Pages\\Auth\\LoginPage.razor",
-              "ToolTip": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Pages\\Auth\\LoginPage.razor",
-              "RelativeToolTip": "ToDo.UI\\Components\\Pages\\Auth\\LoginPage.razor",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACQAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-29T16:36:38.935Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "DailyTaskPage.razor",
               "DocumentMoniker": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Pages\\Dashboard\\DailyTaskPage.razor",
               "RelativeDocumentMoniker": "ToDo.UI\\Components\\Pages\\Dashboard\\DailyTaskPage.razor",
               "ToolTip": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Pages\\Dashboard\\DailyTaskPage.razor",
               "RelativeToolTip": "ToDo.UI\\Components\\Pages\\Dashboard\\DailyTaskPage.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-29T16:34:42.461Z",
+              "WhenOpened": "2024-12-31T08:22:51.826Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CategoryPage.razor",
-              "DocumentMoniker": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Pages\\Dashboard\\CategoryPage.razor",
-              "RelativeDocumentMoniker": "ToDo.UI\\Components\\Pages\\Dashboard\\CategoryPage.razor",
-              "ToolTip": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Pages\\Dashboard\\CategoryPage.razor",
-              "RelativeToolTip": "ToDo.UI\\Components\\Pages\\Dashboard\\CategoryPage.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "LoadingPage.razor",
+              "DocumentMoniker": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Shared\\LoadingPage.razor",
+              "RelativeDocumentMoniker": "ToDo.UI\\Components\\Shared\\LoadingPage.razor",
+              "ToolTip": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Shared\\LoadingPage.razor*",
+              "RelativeToolTip": "ToDo.UI\\Components\\Shared\\LoadingPage.razor*",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB4AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-29T16:34:37.52Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TaskPage.razor",
-              "DocumentMoniker": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Pages\\Dashboard\\TaskPage.razor",
-              "RelativeDocumentMoniker": "ToDo.UI\\Components\\Pages\\Dashboard\\TaskPage.razor",
-              "ToolTip": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Pages\\Dashboard\\TaskPage.razor",
-              "RelativeToolTip": "ToDo.UI\\Components\\Pages\\Dashboard\\TaskPage.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-29T16:34:27.634Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TodoPage.razor",
-              "DocumentMoniker": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Pages\\Dashboard\\TodoPage.razor",
-              "RelativeDocumentMoniker": "ToDo.UI\\Components\\Pages\\Dashboard\\TodoPage.razor",
-              "ToolTip": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Pages\\Dashboard\\TodoPage.razor",
-              "RelativeToolTip": "ToDo.UI\\Components\\Pages\\Dashboard\\TodoPage.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-29T16:34:20.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "ToDo.UI\\Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\GS_Practice\\AppDev\\ToDo\\ToDo.UI\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "ToDo.UI\\Components\\Pages\\Home.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-29T16:32:53.869Z",
+              "WhenOpened": "2024-12-31T08:18:10.157Z",
               "EditorCaption": ""
             }
           ]

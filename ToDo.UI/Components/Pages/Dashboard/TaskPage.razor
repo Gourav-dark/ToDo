@@ -1,6 +1,30 @@
 ﻿@attribute [Authorize]
+@inject IAuthService _authService
 <h3>TaskPage</h3>
+<div class="text-white">
+    @if(list.Count==0 || list == null)
+    {
+        <p>Data Not Found</p>
+    }
+    else
+    {
+        @foreach (var data in list)
+        {
+            <p>@data.Email</p>
+            <p>@data.Password</p>
+            <p>@data.CreatedAt</p>
+        }
+    }
+</div>
 
 @code {
-
+    public List<User> list = new();
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAsync();
+    }
+    private async Task LoadAsync()
+    {
+        list = (await _authService.GetAll()).Data;
+    }
 }

@@ -39,6 +39,8 @@ namespace ToDo.UI
             builder.Services.AddAuthorizationCore();
             builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
             builder.Services.AddScoped<CustomAuthenticationStateProvider>();
+            //Loading Service
+            builder.Services.AddSingleton<LoadingService>();
             // Register Generic DataService
             builder.Services.AddScoped(typeof(IDataService<,>), typeof(DataService<,>));
             builder.Services.AddScoped<IAuthService, AuthService>();

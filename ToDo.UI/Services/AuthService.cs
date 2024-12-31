@@ -2,35 +2,62 @@
 using ToDo.Shared.DTO;
 using ToDo.Shared.Models;
 using ToDo.Shared.Services;
+using ToDo.Shared.Wrapper;
 using ToDo.UI.Authentication;
 
 namespace ToDo.UI.Services;
+
 public interface IAuthService
 {
-    Task<bool> Login(UserDTO obj);
+    Task<ResponseWrapper<User>> Login(UserDTO obj);
     Task Logout();
-    Task<string> Register(UserDTO obj);
-    Task<User> Get(string userId);
-    Task<IEnumerable<User>> GetAll();
+    Task<ResponseWrapper<User>> Register(UserDTO obj);
+    Task<ResponseWrapper<User>> Get(string userId);
+    Task<ResponseWrapper<List<User>>> GetAll();
+    Task<ResponseWrapper<User>> GetCurrentUser();
 }
+
 public class AuthService : IAuthService
 {
     private readonly IDataService<User, string> _data;
     private readonly CustomAuthenticationStateProvider _authProvider;
+
     public AuthService(IDataService<User, string> data, AuthenticationStateProvider authProvider)
     {
-        _data = data;
-        _authProvider = (CustomAuthenticationStateProvider)authProvider;
+        _data = data ?? throw new ArgumentNullException(nameof(data));
+        _authProvider = authProvider as CustomAuthenticationStateProvider
+            ?? throw new ArgumentException("Invalid AuthenticationStateProvider", nameof(authProvider));
     }
-    public async Task<bool> Login(UserDTO obj)
+
+    public async Task<ResponseWrapper<User>> Login(UserDTO obj)
     {
-        User user = (await _data.GetAsync(x => x.Email == obj.Email && x.Password == obj.Password)).FirstOrDefault(new User());
+        if (obj == null)
+            return new ResponseWrapper<User> { Succeeded = false, Message = "Invalid login request." };
+
+        var user = (await _data.GetAsync(x => x.Email == obj.Email)).FirstOrDefault();
         if (user == null)
         {
-            return false;
+            return new ResponseWrapper<User>
+            {
+                Succeeded = false,
+                Message = "User not found."
+            };
         }
+
+        if (user.Password != obj.Password) // In production, use a secure password hashing mechanism.
+        {
+            return new ResponseWrapper<User>
+            {
+                Succeeded = false,
+                Message = "Incorrect password."
+            };
+        }
+
         await _authProvider.LoginAsync(user);
-        return true;
+        return new ResponseWrapper<User>(user)
+        {
+            Message = "Login successful."
+        };
     }
 
     public async Task Logout()
@@ -38,38 +65,87 @@ public class AuthService : IAuthService
         await _authProvider.LogoutAsync();
     }
 
-    public async Task<string> Register(UserDTO obj)
+    public async Task<ResponseWrapper<User>> Register(UserDTO obj)
     {
-        User user=new User();
         if (obj == null)
-            return "";
-        user.UserId = Guid.NewGuid().ToString();
-        if (obj.UserType == UserType.Guest)
         {
-            user.Email = user.UserId + "@gmail.com";
-            user.Password = string.Empty;
+            return new ResponseWrapper<User>
+            {
+                Succeeded = false,
+                Message = "Invalid registration request."
+            };
         }
-        else
+
+        var user = new User
         {
-            user.Email = obj.Email;
-            user.Password = obj.Password;
+            UserId = Guid.NewGuid().ToString(),
+            Email = obj.UserType == UserType.Guest ? $"{Guid.NewGuid()}@gmail.com" : obj.Email,
+            Password = obj.UserType == UserType.Guest ? string.Empty : obj.Password, // In production, hash passwords.
+            CreatedAt = DateTime.UtcNow
+        };
+
+        try
+        {
+            var createdUser = await _data.AddAsync(user);
+            await _authProvider.LoginAsync(createdUser);
+
+            return new ResponseWrapper<User>(createdUser)
+            {
+                Message = "Registration successful."
+            };
         }
-        user.CreatedAt = DateTime.UtcNow;
-        User currentUser=await _data.AddAsync(user);
-        await _authProvider.LoginAsync(user);
-        return user.UserId;
+        catch (Exception ex)
+        {
+            return new ResponseWrapper<User>
+            {
+                Succeeded = false,
+                Message = $"Registration failed: {ex.Message}"
+            };
+        }
     }
 
-    public async Task<User> Get(string userId)
+    public async Task<ResponseWrapper<User>> Get(string userId)
     {
-        User? user = await _data.GetByIdAsync(userId);
+        if (string.IsNullOrEmpty(userId))
+        {
+            return new ResponseWrapper<User>
+            {
+                Succeeded = false,
+                Message = "User ID is required."
+            };
+        }
+
+        var user = await _data.GetByIdAsync(userId);
         if (user == null)
-            return new User();
-        return user;
+        {
+            return new ResponseWrapper<User>
+            {
+                Succeeded = false,
+                Message = "User not found."
+            };
+        }
+
+        return new ResponseWrapper<User>(user);
     }
 
-    public async Task<IEnumerable<User>> GetAll()
+    public async Task<ResponseWrapper<List<User>>> GetAll()
     {
-        return await _data.GetAsync();
+        var users = await _data.GetAsync();
+        return new ResponseWrapper<List<User>>(users);
+    }
+
+    public async Task<ResponseWrapper<User>> GetCurrentUser()
+    {
+        var user = await _authProvider.GetAuthenticatedUserAsync();
+        if (user == null)
+        {
+            return new ResponseWrapper<User>
+            {
+                Succeeded = false,
+                Message = "No user is currently authenticated."
+            };
+        }
+
+        return new ResponseWrapper<User>(user);
     }
 }

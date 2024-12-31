@@ -1,12 +1,12 @@
 ﻿@page "/securedata"
 @attribute [Authorize]
 @inject ISecureDataService _secureDataService
+@inject LoadingService _loadingService
+
 <div class="px-2">
     @if (secureDatas == null || secureDatas.Count == 0)
     {
-        <div class="text-center text-muted">
-            <p>Loading or No data found</p>
-        </div>
+        <EmptyTaskComponent />
     }
     else
     {
@@ -39,7 +39,13 @@
 
     private async Task LoadAsync()
     {
-        secureDatas = await _secureDataService.GetAll();
+        _loadingService.Show();
+        var response = await _secureDataService.GetAll();
+        _loadingService.Hide();
+        if (response.Succeeded)
+        {
+            secureDatas = response.Data;
+        }
     }
 
     private void TogglePasswordVisibility(int id)

@@ -1,0 +1,41 @@
+﻿@inject LoadingService LoadingService
+
+@if (IsVisible)
+{
+    <div class="loading-overlay">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="spinner-grow px-1 Loading-spinner spinner1" role="status"></div>
+            <div class="spinner-grow px-1 Loading-spinner spinner2" role="status"></div>
+            <div class="spinner-grow px-1 Loading-spinner spinner3" role="status"></div>
+        </div>
+    </div>
+}
+
+@code {
+    private bool IsVisible { get; set; }
+
+    protected override void OnInitialized()
+    {
+        LoadingService.OnShow += Show;
+        LoadingService.OnHide += Hide;
+    }
+
+    private async void Show()
+    {
+        IsVisible = true;
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private async void Hide()
+    {
+        // await Task.Delay(100);
+        IsVisible = false;
+        await InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        LoadingService.OnShow -= Show;
+        LoadingService.OnHide -= Hide;
+    }
+}

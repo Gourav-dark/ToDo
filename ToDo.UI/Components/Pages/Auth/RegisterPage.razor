@@ -1,5 +1,6 @@
 ﻿@page "/register"
-@inject IAuthService _userService
+@inject IAuthService _authService
+@inject LoadingService _loadingService
 @inject NavigationManager _navManager;
 
 <div class="mt-5 text-white px-3">
@@ -22,9 +23,9 @@
             <div class="mb-3">
                 <label for="confirmPassword" class="form-label fs-5">Confirm Password</label>
                 <InputText id="confirmPassword" class="form-control bg-dark text-white  py-2 fs-5" @bind-Value="confirmPassword" type="password" placeholder="Re-enter your password" />
-                @if (!string.IsNullOrEmpty(passwordMismatchError))
+                @if (!string.IsNullOrEmpty(errorMessage))
                 {
-                    <span class="text-danger fs-7 pt-2">@passwordMismatchError</span>
+                    <span class="text-danger fs-7 pt-2">@errorMessage</span>
                 }
             </div>
             <div class="d-grid mt-5">
@@ -40,31 +41,32 @@
 @code {
     private UserDTO register = new UserDTO();
     private string? confirmPassword;
-    private string? passwordMismatchError;
+    // private string? passwordMismatchError;
+    private string? errorMessage;
 
     private async Task Register()
     {
         // Clear any previous error message
-        passwordMismatchError = string.Empty;
+        errorMessage = string.Empty;
 
         // Validate if passwords match
         if (register.Password != confirmPassword)
         {
-            passwordMismatchError = "Passwords do not match.";
+            errorMessage = "Passwords do not match.";
             return;
         }
 
-        try
+        register.UserType = UserType.User;
+        _loadingService.Show();
+        var response = await _authService.Register(register);
+        _loadingService.Hide();
+        if (response.Succeeded)
         {
-            // Attempt registration
-            register.UserType = UserType.User;
-            string userId = await _userService.Register(register);
             _navManager.NavigateTo("/");
         }
-        catch (Exception ex)
+        else
         {
-            // Handle any errors
-            passwordMismatchError = "An error occurred during registration.";
+            errorMessage = response.Message;
         }
     }
 }

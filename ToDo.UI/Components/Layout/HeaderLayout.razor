@@ -1,7 +1,55 @@
-﻿<div class="position-fixed top-0 start-0 w-100 text-white d-flex justify-content-between align-items-center bg-black header px-4">
+﻿@inject IAuthService _authService
+@inject NavigationManager _navManager
+
+<div class="position-fixed top-0 start-0 w-100 text-white d-flex justify-content-between align-items-center bg-black header px-4">
     <div>
         <i class="bi bi-filter icon-size"></i>
     </div>
-    <div class="fs-4">Index</div>
-    <div>O</div>
+    <div class="fs-4 text-capitalize text-white">@Title</div>
+    <div class="border border-white-50 bg-dark px-2 py-1 rounded-circle text-white fs-6">@Name</div>
 </div>
+
+@code {
+    private string? Name { get; set; }
+    private string? Title { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetName();
+        SetTitleBasedOnUrl();
+        _navManager.LocationChanged += OnLocationChanged;
+    }
+
+    private async Task GetName()
+    {
+        var currentUser = await _authService.GetCurrentUser();
+        Name = currentUser.Data.Email.Substring(0, 1).ToUpper();
+    }
+
+    private void SetTitleBasedOnUrl()
+    {
+        // Get the current URI path
+        var currentUri = _navManager.Uri.Replace(_navManager.BaseUri, "").TrimEnd('/');
+
+        // Set Title based on the route
+        Title = currentUri switch
+        {
+            "" => "Index",
+            "dailytasks" => "Daily Task",
+            "securedata" => "Secure Data",
+            "profile" => "Profile",
+            _ => "Index"
+        };
+    }
+
+    private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        SetTitleBasedOnUrl();
+        StateHasChanged(); // Trigger re-rendering
+    }
+
+    public void Dispose()
+    {
+        _navManager.LocationChanged -= OnLocationChanged; // Clean up the event subscription
+    }
+}

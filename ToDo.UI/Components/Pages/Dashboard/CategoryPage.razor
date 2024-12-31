@@ -24,6 +24,6 @@
     }
     public async Task DataFetch()
     {
-        categories = await _categoryService.GetAll();
+        categories = (await _categoryService.GetAll()).Data;
     }
 }

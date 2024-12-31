@@ -1,1 +1,0 @@
-C:\GS_Practice\AppDev\ToDo\ToDo.UI\ToDo.UI.csproj;x64

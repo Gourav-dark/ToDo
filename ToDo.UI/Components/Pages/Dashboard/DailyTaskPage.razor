@@ -1,10 +1,12 @@
 ﻿@page "/dailytasks"
 @attribute [Authorize]
 @inject ITaskService _taskService
+@inject LoadingService _loadingService
+
 <div class="px-2">
     @if (dailyTasks == null || dailyTasks.Count == 0)
     {
-        <p>Loading or No data found</p>
+        <EmptyTaskComponent/>
     }
     else
     {
@@ -58,7 +60,13 @@
 
     private async Task LoadAsync()
     {
-        dailyTasks = await _taskService.GetAllTasks();
+        _loadingService.Show();
+        var response = await _taskService.GetAllTasks();
+        _loadingService.Hide();
+        if (response.Succeeded)
+        {
+            dailyTasks = response.Data;
+        }
     }
 
     private async Task ToggleTaskStatus(int taskId)

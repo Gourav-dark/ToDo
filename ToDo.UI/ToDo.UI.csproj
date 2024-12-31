@@ -74,4 +74,6 @@
       <Folder Include="Components\Pages\Splash\" />
     </ItemGroup>
 
+    <ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionToDoUIHideInfoBar="True" /></VisualStudio></ProjectExtensions>
+
 </Project>

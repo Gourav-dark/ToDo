@@ -1,72 +1,224 @@
 ﻿using ToDo.Shared.DTO;
 using ToDo.Shared.Models;
 using ToDo.Shared.Services;
+using ToDo.Shared.Wrapper;
 
 namespace ToDo.UI.Services;
+
 public interface ISecureDataService
 {
-    Task<List<SecureData>> GetAll();
-    Task<List<SecureData>> GetByUserId(string userId);
-    Task<SecureData> GetById(int id);
-    Task<bool> Add(SecureDataDTO obj);
-    Task<bool> Update(int id,SecureDataDTO obj);
-    Task<bool> Delete(int id);
+    Task<ResponseWrapper<List<SecureData>>> GetAll();
+    Task<ResponseWrapper<List<SecureData>>> GetByUserId(string userId);
+    Task<ResponseWrapper<SecureData>> GetById(int id);
+    Task<ResponseWrapper<SecureData>> Add(SecureDataDTO obj);
+    Task<ResponseWrapper<SecureData>> Update(int id, SecureDataDTO obj);
+    Task<ResponseWrapper<SecureData>> Delete(int id);
 }
+
 public class SecureDataService : ISecureDataService
 {
     private readonly IDataService<SecureData, int> _data;
+
     public SecureDataService(IDataService<SecureData, int> data)
     {
-        _data=data;
+        _data = data ?? throw new ArgumentNullException(nameof(data));
     }
-    public async Task<bool> Add(SecureDataDTO obj)
+
+    public async Task<ResponseWrapper<SecureData>> Add(SecureDataDTO obj)
     {
-        SecureData secureData = new SecureData()
+        if (obj == null || string.IsNullOrWhiteSpace(obj.SiteName) || string.IsNullOrWhiteSpace(obj.Email))
         {
-            SiteName= obj.SiteName,
-            Email= obj.Email,
-            Password= obj.Password,
-            UserId= obj.UserId
-        };
-        await _data.AddAsync(secureData);
-        return true;
-    }
-
-    public async Task<bool> Delete(int id)
-    {
-        return await _data.DeleteAsync(id);
-    }
-
-    public async Task<List<SecureData>> GetAll()
-    {
-        return await _data.GetAsync();
-    }
-
-    public async Task<SecureData> GetById(int id)
-    {
-        var secureData=await _data.GetByIdAsync(id);
-        if (secureData == null)
-        {
-            return new SecureData();
+            return new ResponseWrapper<SecureData>
+            {
+                Succeeded = false,
+                Message = "Invalid secure data details."
+            };
         }
-        return secureData;
+
+        var secureData = new SecureData
+        {
+            SiteName = obj.SiteName,
+            Email = obj.Email,
+            Password = obj.Password,
+            UserId = obj.UserId
+        };
+
+        try
+        {
+            await _data.AddAsync(secureData);
+            return new ResponseWrapper<SecureData>(secureData)
+            {
+                Message = "Secure data added successfully."
+            };
+        }
+        catch (Exception ex)
+        {
+            return new ResponseWrapper<SecureData>
+            {
+                Succeeded = false,
+                Message = $"Failed to add secure data: {ex.Message}"
+            };
+        }
     }
 
-    public Task<List<SecureData>> GetByUserId(string userId)
+    public async Task<ResponseWrapper<SecureData>> Delete(int id)
     {
-        return _data.GetAsync(s=>s.UserId==userId);
+        if (id <= 0)
+        {
+            return new ResponseWrapper<SecureData>
+            {
+                Succeeded = false,
+                Message = "Invalid secure data ID."
+            };
+        }
+
+        try
+        {
+            await _data.DeleteAsync(id);
+            return new ResponseWrapper<SecureData>
+            {
+                Succeeded = true,
+                Message = "Secure data deleted successfully."
+            };
+        }
+        catch (Exception ex)
+        {
+            return new ResponseWrapper<SecureData>
+            {
+                Succeeded = false,
+                Message = $"Failed to delete secure data: {ex.Message}"
+            };
+        }
     }
 
-    public async Task<bool> Update(int id,SecureDataDTO obj)
+    public async Task<ResponseWrapper<List<SecureData>>> GetAll()
     {
-        SecureData secureData=await GetById(id);
-        if(secureData == null)
-            return false;
-        secureData.SiteName = obj.SiteName;
-        secureData.Email = obj.Email;
-        secureData.Password = obj.Password;
-        secureData.UserId = obj.UserId;
-        await _data.UpdateAsync(secureData);
-        return true;
+        try
+        {
+            var data = await _data.GetAsync();
+            return new ResponseWrapper<List<SecureData>>(data)
+            {
+                Message = "Secure data retrieved successfully."
+            };
+        }
+        catch (Exception ex)
+        {
+            return new ResponseWrapper<List<SecureData>>
+            {
+                Succeeded = false,
+                Message = $"Failed to retrieve secure data: {ex.Message}"
+            };
+        }
+    }
+
+    public async Task<ResponseWrapper<SecureData>> GetById(int id)
+    {
+        if (id <= 0)
+        {
+            return new ResponseWrapper<SecureData>
+            {
+                Succeeded = false,
+                Message = "Invalid secure data ID."
+            };
+        }
+
+        try
+        {
+            var secureData = await _data.GetByIdAsync(id);
+            if (secureData == null)
+            {
+                return new ResponseWrapper<SecureData>
+                {
+                    Succeeded = false,
+                    Message = "Secure data not found."
+                };
+            }
+
+            return new ResponseWrapper<SecureData>(secureData)
+            {
+                Message = "Secure data retrieved successfully."
+            };
+        }
+        catch (Exception ex)
+        {
+            return new ResponseWrapper<SecureData>
+            {
+                Succeeded = false,
+                Message = $"Failed to retrieve secure data: {ex.Message}"
+            };
+        }
+    }
+
+    public async Task<ResponseWrapper<List<SecureData>>> GetByUserId(string userId)
+    {
+        if (string.IsNullOrWhiteSpace(userId))
+        {
+            return new ResponseWrapper<List<SecureData>>
+            {
+                Succeeded = false,
+                Message = "Invalid user ID."
+            };
+        }
+
+        try
+        {
+            var data = await _data.GetAsync(s => s.UserId == userId);
+            return new ResponseWrapper<List<SecureData>>(data)
+            {
+                Message = "Secure data retrieved successfully."
+            };
+        }
+        catch (Exception ex)
+        {
+            return new ResponseWrapper<List<SecureData>>
+            {
+                Succeeded = false,
+                Message = $"Failed to retrieve secure data: {ex.Message}"
+            };
+        }
+    }
+
+    public async Task<ResponseWrapper<SecureData>> Update(int id, SecureDataDTO obj)
+    {
+        if (id <= 0 || obj == null || string.IsNullOrWhiteSpace(obj.SiteName) || string.IsNullOrWhiteSpace(obj.Email))
+        {
+            return new ResponseWrapper<SecureData>
+            {
+                Succeeded = false,
+                Message = "Invalid secure data details."
+            };
+        }
+
+        try
+        {
+            var secureData = await _data.GetByIdAsync(id);
+            if (secureData == null)
+            {
+                return new ResponseWrapper<SecureData>
+                {
+                    Succeeded = false,
+                    Message = "Secure data not found."
+                };
+            }
+
+            secureData.SiteName = obj.SiteName;
+            secureData.Email = obj.Email;
+            secureData.Password = obj.Password;
+            secureData.UserId = obj.UserId;
+
+            await _data.UpdateAsync(secureData);
+            return new ResponseWrapper<SecureData>(secureData)
+            {
+                Message = "Secure data updated successfully."
+            };
+        }
+        catch (Exception ex)
+        {
+            return new ResponseWrapper<SecureData>
+            {
+                Succeeded = false,
+                Message = $"Failed to update secure data: {ex.Message}"
+            };
+        }
     }
 }
