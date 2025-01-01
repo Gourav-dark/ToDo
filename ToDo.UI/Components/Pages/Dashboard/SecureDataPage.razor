@@ -1,7 +1,9 @@
 ﻿@page "/securedata"
 @attribute [Authorize]
 @inject ISecureDataService _secureDataService
+@inject IAuthService _authService
 @inject LoadingService _loadingService
+@inject NavigationManager _navManager
 
 <div class="px-2">
     @if (secureDatas == null || secureDatas.Count == 0)
@@ -14,7 +16,11 @@
         {
             <div class="bg-dark text-white mb-2 d-flex flex-column rounded-1 p-2 py-3">
                 <div class="w-100 px-2">
-                    <h5 class="text-capitalize mb-2 fs-5">@data.SiteName</h5>
+                    <h5 class="text-capitalize mb-2 fs-5"
+                        style="cursor: pointer;"
+                        @onclick="() => NavigateToEdit(data.Id)">
+                        @data.SiteName
+                    </h5>
                     <p class="fs-6">Email: @data.Email</p>
                 </div>
                 <div class="input-group px-2">
@@ -31,6 +37,7 @@
 @code {
     private List<SecureData> secureDatas = new();
     private HashSet<int> visiblePasswords = new();
+    private string userId = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
@@ -40,12 +47,19 @@
     private async Task LoadAsync()
     {
         _loadingService.Show();
-        var response = await _secureDataService.GetAll();
+        await GetUserId();
+        var response = await _secureDataService.GetByUserId(userId);
         _loadingService.Hide();
         if (response.Succeeded)
         {
             secureDatas = response.Data;
         }
+    }
+
+    private async Task GetUserId()
+    {
+        var response = await _authService.GetCurrentUser();
+        userId = response.Data.UserId;
     }
 
     private void TogglePasswordVisibility(int id)
@@ -68,5 +82,10 @@
     private string GetPasswordIcon(int id)
     {
         return visiblePasswords.Contains(id) ? "bi bi-eye-slash" : "bi bi-eye";
+    }
+
+    private void NavigateToEdit(int id)
+    {
+        _navManager.NavigateTo($"/edit-secure-data/{id}");
     }
 }

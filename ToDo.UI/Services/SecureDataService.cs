@@ -26,7 +26,7 @@ public class SecureDataService : ISecureDataService
 
     public async Task<ResponseWrapper<SecureData>> Add(SecureDataDTO obj)
     {
-        if (obj == null || string.IsNullOrWhiteSpace(obj.SiteName) || string.IsNullOrWhiteSpace(obj.Email))
+        if (obj == null || string.IsNullOrWhiteSpace(obj.SiteName))
         {
             return new ResponseWrapper<SecureData>
             {
@@ -180,7 +180,7 @@ public class SecureDataService : ISecureDataService
 
     public async Task<ResponseWrapper<SecureData>> Update(int id, SecureDataDTO obj)
     {
-        if (id <= 0 || obj == null || string.IsNullOrWhiteSpace(obj.SiteName) || string.IsNullOrWhiteSpace(obj.Email))
+        if (id <= 0 || obj == null || string.IsNullOrWhiteSpace(obj.SiteName))
         {
             return new ResponseWrapper<SecureData>
             {

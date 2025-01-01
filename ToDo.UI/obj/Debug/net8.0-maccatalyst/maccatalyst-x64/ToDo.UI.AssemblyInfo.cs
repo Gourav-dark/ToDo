@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ToDo.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+3d293c06663ab76e1bd59a1cf38fe86aa7bbe489")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+2284b368d008b20e6bf44df31cd4c18f1e3c70e5")]
 [assembly: System.Reflection.AssemblyProductAttribute("ToDo.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ToDo.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

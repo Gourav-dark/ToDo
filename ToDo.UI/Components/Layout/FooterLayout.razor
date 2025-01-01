@@ -1,5 +1,5 @@
-﻿@inject NavigationManager _navManager;
-@inject LoadingService _loadingService;
+﻿@inject NavigationManager _navManager
+@inject LoadingService _loadingService
 
 <div class="position-fixed bottom-0 start-0 w-100 text-white d-flex justify-content-around align-items-center footer">
     <NavLink class="nav-link d-flex flex-column align-items-center justify-content-center" href="/" Match="NavLinkMatch.All" @onclick='()=>NavigateToAsync("/")'>
@@ -25,7 +25,6 @@
 
 @code {
     private bool isRotating = false;
-
     private async Task RotateIcon()
     {
         isRotating = true;
@@ -33,9 +32,15 @@
         await Task.Delay(500);
         isRotating = false;
         StateHasChanged();
-        await NavigateToAsync("create-task");
-    }
 
+        // Determine the route dynamically based on the current page
+        var currentRoute = GetCurrentRoute();
+        var navigateTo = currentRoute.Contains("securedata", StringComparison.OrdinalIgnoreCase)
+            ? "create-secure-data"
+            : "create-task";
+
+        await NavigateToAsync(navigateTo);
+    }
     private async Task NavigateToAsync(string route)
     {
         _loadingService.Show();
@@ -49,5 +54,9 @@
         var currentUri = _navManager.Uri.Replace(_navManager.BaseUri, "").TrimEnd('/');
         var normalizedRoute = route.Trim('/');
         return string.Equals(currentUri, normalizedRoute, StringComparison.OrdinalIgnoreCase);
+    }
+    private string GetCurrentRoute()
+    {
+        return _navManager.Uri.Replace(_navManager.BaseUri, "").TrimEnd('/');
     }
 }
