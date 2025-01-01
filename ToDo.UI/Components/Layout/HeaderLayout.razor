@@ -22,22 +22,21 @@
 
     private async Task GetName()
     {
-        var currentUser = await _authService.GetCurrentUser();
-        Name = currentUser.Data.Email.Substring(0, 1).ToUpper();
+        var response = await _authService.GetCurrentUser();
+        Name = response.Data.Email.Substring(0, 1).ToUpper();
     }
 
     private void SetTitleBasedOnUrl()
     {
-        // Get the current URI path
         var currentUri = _navManager.Uri.Replace(_navManager.BaseUri, "").TrimEnd('/');
 
-        // Set Title based on the route
         Title = currentUri switch
         {
             "" => "Index",
             "dailytasks" => "Daily Task",
             "securedata" => "Secure Data",
             "profile" => "Profile",
+            "create-task" => "Create Task",
             _ => "Index"
         };
     }
@@ -45,11 +44,11 @@
     private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
     {
         SetTitleBasedOnUrl();
-        StateHasChanged(); // Trigger re-rendering
+        StateHasChanged();
     }
 
     public void Dispose()
     {
-        _navManager.LocationChanged -= OnLocationChanged; // Clean up the event subscription
+        _navManager.LocationChanged -= OnLocationChanged;
     }
 }

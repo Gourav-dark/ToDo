@@ -95,7 +95,12 @@ public class TaskService : ITaskService
 
     public async Task<ResponseWrapper<List<TaskItem>>> GetAllTasksByUserId(string userId)
     {
-        var tasks = await _data.GetAsync(x => x.UserId == userId && !x.IsDailyTask, c => c.Category);
+        var tasks = await _data.GetAsync(x => x.UserId == userId && x.IsDailyTask == false, c => c.Category);
+        return new ResponseWrapper<List<TaskItem>>(tasks);
+    }
+    public async Task<ResponseWrapper<List<TaskItem>>> GetDailyTasksByUserId(string userId)
+    {
+        var tasks = await _data.GetAsync(x => x.UserId == userId && x.IsDailyTask==true, c => c.Category);
         return new ResponseWrapper<List<TaskItem>>(tasks);
     }
 
@@ -111,12 +116,6 @@ public class TaskService : ITaskService
             };
         }
         return new ResponseWrapper<TaskItem>(task);
-    }
-
-    public async Task<ResponseWrapper<List<TaskItem>>> GetDailyTasksByUserId(string userId)
-    {
-        var tasks = await _data.GetAsync(x => x.UserId == userId && x.IsDailyTask);
-        return new ResponseWrapper<List<TaskItem>>(tasks);
     }
 
     public async Task<ResponseWrapper<TaskItem>> Update(int taskId, TaskItemDTO obj)

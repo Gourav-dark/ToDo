@@ -1,22 +1,23 @@
 ﻿@inject NavigationManager _navManager;
+@inject LoadingService _loadingService;
 
 <div class="position-fixed bottom-0 start-0 w-100 text-white d-flex justify-content-around align-items-center footer">
-    <NavLink class="nav-link d-flex flex-column align-items-center justify-content-center" href="/" Match="NavLinkMatch.All">
+    <NavLink class="nav-link d-flex flex-column align-items-center justify-content-center" href="/" Match="NavLinkMatch.All" @onclick='()=>NavigateToAsync("/")'>
         <i id="home" class="bi @(IsActive("/") ? "bi-house-door-fill" : "bi-house-door") icon-size"></i>
         <span class="text-capitalize text-white fs-7">Index</span>
     </NavLink>
-    <NavLink class="nav-link d-flex flex-column align-items-center justify-content-center" href="dailytasks">
+    <NavLink class="nav-link d-flex flex-column align-items-center justify-content-center" href="dailytasks" @onclick='()=>NavigateToAsync("dailytasks")'>
         <i id="todo" class="bi @(IsActive("/dailytasks") ? "bi-clipboard2-check-fill" : "bi-clipboard2-check") icon-size"></i>
         <span class="text-capitalize text-white fs-7">Daily Task</span>
     </NavLink>
     <div class="position-relative bottom-50" @onclick="RotateIcon">
         <i id="plus" class="bi bi-plus-circle-fill d-inline-flex icon-size-1 @(isRotating ? "rotate" : "")"></i>
     </div>
-    <NavLink class="nav-link d-flex flex-column align-items-center justify-content-center" href="securedata">
+    <NavLink class="nav-link d-flex flex-column align-items-center justify-content-center" href="securedata" @onclick='()=>NavigateToAsync("securedata")'>
         <i id="counter" class="bi @(IsActive("/securedata") ? "bi-file-earmark-lock2-fill" : "bi-file-earmark-lock2") icon-size"></i>
         <span class="text-capitalize text-white fs-7">Note</span>
     </NavLink>
-    <NavLink class="nav-link d-flex flex-column align-items-center justify-content-center" href="profile">
+    <NavLink class="nav-link d-flex flex-column align-items-center justify-content-center" href="profile" @onclick='()=>NavigateToAsync("profile")'>
         <i id="weather" class="bi @(IsActive("/profile") ? "bi-person-fill" : "bi-person") icon-size"></i>
         <span class="text-capitalize text-white fs-7">profile</span>
     </NavLink>
@@ -32,7 +33,17 @@
         await Task.Delay(500);
         isRotating = false;
         StateHasChanged();
+        await NavigateToAsync("create-task");
     }
+
+    private async Task NavigateToAsync(string route)
+    {
+        _loadingService.Show();
+        await Task.Delay(100); // Small delay for smoother loading transition
+        _navManager.NavigateTo(route);
+        _loadingService.Hide();
+    }
+
     private bool IsActive(string route)
     {
         var currentUri = _navManager.Uri.Replace(_navManager.BaseUri, "").TrimEnd('/');
