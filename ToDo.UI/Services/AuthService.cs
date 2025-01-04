@@ -44,7 +44,7 @@ public class AuthService : IAuthService
             };
         }
 
-        if (user.Password != obj.Password) // In production, use a secure password hashing mechanism.
+        if (user.Password != obj.Password)
         {
             return new ResponseWrapper<User>
             {
@@ -76,12 +76,24 @@ public class AuthService : IAuthService
             };
         }
 
+        // Check if the email already exists in the database
+        var existingUser = await _data.GetAsync(u => u.Email == obj.Email);
+        if (existingUser == null)
+        {
+            return new ResponseWrapper<User>
+            {
+                Succeeded = false,
+                Message = "Email already exists."
+            };
+        }
+
         var user = new User
         {
             UserId = Guid.NewGuid().ToString(),
             Email = obj.UserType == UserType.Guest ? $"{Guid.NewGuid()}@gmail.com" : obj.Email,
-            Password = obj.UserType == UserType.Guest ? string.Empty : obj.Password, // In production, hash passwords.
-            CreatedAt = DateTime.UtcNow
+            Password = obj.UserType == UserType.Guest ? string.Empty : obj.Password,
+            CreatedAt = DateTime.UtcNow,
+            UserType=obj.UserType
         };
 
         try

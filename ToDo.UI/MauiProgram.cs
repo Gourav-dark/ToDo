@@ -33,7 +33,7 @@ namespace ToDo.UI
             using (var scope = builder.Services.BuildServiceProvider().CreateScope())
             {
                 var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-                dbContext.Database.EnsureCreated(); // Creates the database if it doesn't exist
+                dbContext.Database.EnsureCreated();
             }
             //Authentication
             builder.Services.AddAuthorizationCore();

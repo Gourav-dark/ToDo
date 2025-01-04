@@ -1,102 +1,77 @@
 ﻿@page "/profile"
 @attribute [Authorize]
-@inject IAuthService _userService;
+@inject IAuthService _authService;
 @inject NavigationManager _navManager;
 
-<div class="py-4 px-3">
-    <!-- Profile Header -->
-    <div class="d-flex align-items-center mb-4">
-        <div class="me-3">
-            <img src="/images/default-profile.png" alt="Profile Picture" class="rounded-circle" style="width: 100px; height: 100px;">
-        </div>
-        <div>
-            <h2 class="text-white">@UserName</h2>
-            <p class="text-white-50 mb-0">@UserEmail</p>
-        </div>
-    </div>
-
-    <!-- Statistics Section -->
-    <div class="row mb-4">
-        <div class="col-md-4">
-            <div class="bg-dark text-white p-3 rounded">
-                <h4 class="text-center">Incomplete Tasks</h4>
-                <p class="fs-2 text-center">@IncompleteTaskCount</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="bg-success text-white p-3 rounded">
-                <h4 class="text-center">Completed Tasks</h4>
-                <p class="fs-2 text-center">@CompletedTaskCount</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="bg-info text-white p-3 rounded">
-                <h4 class="text-center">Daily Analytics</h4>
-                <div>
-                    <svg width="100%" height="150" xmlns="http://www.w3.org/2000/svg">
-                        <polyline fill="none"
-                                  stroke="blue"
-                                  stroke-width="3"
-                                  points="@GenerateGraphPoints()" />
-                        <!-- X-axis and Y-axis -->
-                        <line x1="0" y1="140" x2="100%" y2="140" stroke="white" stroke-width="1" />
-                        <line x1="20" y1="0" x2="20" y2="140" stroke="white" stroke-width="1" />
-                    </svg>
-                </div>
+<div class="px-3">
+    <!-- Header Section -->
+    <div class="profile-header bg-primary text-white text-center py-4">
+        <div class="d-flex justify-content-center align-items-center">
+            <!-- Circle with first two characters of email -->
+            <div class="rounded-circle bg-white text-primary d-flex justify-content-center align-items-center" style="width: 80px; height: 80px; font-size: 30px; font-weight: bold;">
+                @if (!string.IsNullOrEmpty(user.Email))
+                {
+                    <span>@user.Email.Substring(0, 2).ToUpper()</span>
+                }
             </div>
         </div>
     </div>
-
-    <!-- Navigation List -->
-    <div class="bg-dark p-3 rounded mb-4">
-        <h4 class="text-white mb-3">Navigation</h4>
+    <!-- Settings Section -->
+    <div class="settings-section py-4" style="display:none">
+        <h3 class="text-center mb-4">Profile Settings</h3>
         <ul class="list-group">
-            <li class="list-group-item bg-dark text-white">
-                <a href="/settings" class="text-white text-decoration-none">Settings</a>
+            <li class="list-group-item">
+                <a href="/edit-profile" class="text-decoration-none text-dark">Edit Profile</a>
             </li>
-            <li class="list-group-item bg-dark text-white">
-                <a href="/daily-analytics" class="text-white text-decoration-none">Daily Analytics</a>
+            <li class="list-group-item">
+                <a href="/change-password" class="text-decoration-none text-dark">Change Password</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/notifications" class="text-decoration-none text-dark">Notification Preferences</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/account-security" class="text-decoration-none text-dark">Account Security</a>
             </li>
         </ul>
     </div>
 
     <!-- Logout Button -->
-    <div class="text-end">
-        <button class="btn btn-danger" @onclick="Logout">Logout</button>
-    </div>
+    @if (user.UserType==UserType.Guest)
+    {
+        
+    }
+    else
+    {
+        <div class="text-end position-absolute bottom-50 start-50 ms-5">
+            <button class="btn btn-danger px-5 py-2" @onclick="Logout">Logout</button>
+        </div>
+    }
 </div>
 
 @code {
-    private string UserName { get; set; } = "John Doe"; // Replace with dynamic data
-    private string UserEmail { get; set; } = "johndoe@example.com"; // Replace with dynamic data
-    private int IncompleteTaskCount { get; set; } = 5; // Replace with dynamic data
-    private int CompletedTaskCount { get; set; } = 20; // Replace with dynamic data
-    private List<int> DailyAnalyticsData { get; set; } = new() { 2, 4, 6, 8, 5, 7, 9 }; // Example data points
+    private User user = new();
 
-    private string GenerateGraphPoints()
+    protected override async Task OnInitializedAsync()
     {
-        const int startX = 20; // Offset for Y-axis
-        const int stepX = 30; // Distance between points on the X-axis
-        const int maxY = 140; // Maximum Y value (for scaling)
+        await LoadUserData();
+    }
 
-        // Find max value for normalization
-        int maxValue = DailyAnalyticsData.Max();
-        if (maxValue == 0) maxValue = 1; // Avoid divide-by-zero
-
-        // Generate points
-        var points = new List<string>();
-        for (int i = 0; i < DailyAnalyticsData.Count; i++)
+    private async Task LoadUserData()
+    {
+        var response = await _authService.GetCurrentUser();
+        if (response.Succeeded && response.Data != null)
         {
-            int x = startX + (i * stepX);
-            int y = maxY - (int)((DailyAnalyticsData[i] / (float)maxValue) * maxY);
-            points.Add($"{x},{y}");
+            user = response.Data;
         }
-
-        return string.Join(" ", points);
+        else
+        {
+            _navManager.NavigateTo("/login");
+        }
     }
 
     private void Logout()
     {
-        _navManager.NavigateTo("/logout", true);
+        _authService.Logout();
+        _navManager.NavigateTo("/login");
     }
 }

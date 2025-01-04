@@ -5,7 +5,7 @@
 @inject LoadingService _loadingService
 @inject NavigationManager _navManager
 
-<div class="px-2">
+<div class="px-2 mt-1">
     @if (secureDatas == null || secureDatas.Count == 0)
     {
         <EmptyTaskComponent />
@@ -14,16 +14,16 @@
     {
         @foreach (var data in secureDatas)
         {
-            <div class="bg-dark text-white mb-2 d-flex flex-column rounded-1 p-2 py-3">
-                <div class="w-100 px-2">
-                    <h5 class="text-capitalize mb-2 fs-5"
+            <div class="bg-dark text-white-50 mb-2 d-flex flex-column rounded-1 p-1 py-3">
+                <div class="w-100 px-2 d-flex flex-column">
+                    <span class="text-capitalize fs-6"
                         style="cursor: pointer;"
                         @onclick="() => NavigateToEdit(data.Id)">
                         @data.SiteName
-                    </h5>
-                    <p class="fs-6">Email: @data.Email</p>
+                    </span>
+                    <span class="fs-6">Email: <span class="text-white">@data.Email</span></span>
                 </div>
-                <div class="input-group px-2">
+                <div class="input-group px-2 text-white">
                     <input type="@(GetPasswordInputType(data))" class="form-control bg-dark text-white" @bind="@data.Password" readonly />
                     <button class="btn btn-outline-dark border-light" type="button" @onclick="() => TogglePasswordVisibility(data.Id)">
                         <i class="@(GetPasswordIcon(data.Id)) text-white"></i>
