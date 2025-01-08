@@ -1,7 +1,9 @@
 ﻿@inject NavigationManager _navManager
 @inject LoadingService _loadingService
 
-<div class="position-fixed bottom-0 start-0 w-100 text-white d-flex justify-content-around align-items-center footer">
+<div class="position-fixed bottom-0 start-0 w-100 text-white d-flex justify-content-around align-items-center footer"
+     @onpointerdown="OnTouchStart"
+     @onpointerup="OnTouchEnd">
     <NavLink class="nav-link d-flex flex-column align-items-center justify-content-center" href="/" Match="NavLinkMatch.All" @onclick='()=>NavigateToAsync("/")'>
         <i id="home" class="bi @(IsActive("/") ? "bi-house-door-fill" : "bi-house-door") icon-size"></i>
         <span class="text-capitalize text-white fs-7">Index</span>
@@ -19,12 +21,15 @@
     </NavLink>
     <NavLink class="nav-link d-flex flex-column align-items-center justify-content-center" href="profile" @onclick='()=>NavigateToAsync("profile")'>
         <i id="weather" class="bi @(IsActive("/profile") ? "bi-person-fill" : "bi-person") icon-size"></i>
-        <span class="text-capitalize text-white fs-7">profile</span>
+        <span class="text-capitalize text-white fs-7">Profile</span>
     </NavLink>
 </div>
 
 @code {
     private bool isRotating = false;
+    private double touchStartX = 0;
+    private double touchEndX = 0;
+
     private async Task RotateIcon()
     {
         isRotating = true;
@@ -41,6 +46,7 @@
 
         await NavigateToAsync(navigateTo);
     }
+
     private async Task NavigateToAsync(string route)
     {
         _loadingService.Show();
@@ -55,8 +61,42 @@
         var normalizedRoute = route.Trim('/');
         return string.Equals(currentUri, normalizedRoute, StringComparison.OrdinalIgnoreCase);
     }
+
     private string GetCurrentRoute()
     {
         return _navManager.Uri.Replace(_navManager.BaseUri, "").TrimEnd('/');
+    }
+
+    private void OnTouchStart(PointerEventArgs e)
+    {
+        touchStartX = e.ClientX;
+    }
+
+    private async void OnTouchEnd(PointerEventArgs e)
+    {
+        touchEndX = e.ClientX;
+        var deltaX = touchEndX - touchStartX;
+
+        if (deltaX > 50) // Swipe right
+        {
+            await NavigateToAdjacentRoute(-1);
+        }
+        else if (deltaX < -50) // Swipe left
+        {
+            await NavigateToAdjacentRoute(1);
+        }
+    }
+
+    private async Task NavigateToAdjacentRoute(int direction)
+    {
+        var routes = new[] { "/", "dailytasks", "securedata", "profile" };
+        var currentRoute = GetCurrentRoute();
+        var currentIndex = Array.IndexOf(routes, currentRoute);
+
+        if (currentIndex != -1)
+        {
+            var nextIndex = (currentIndex + direction + routes.Length) % routes.Length;
+            await NavigateToAsync(routes[nextIndex]);
+        }
     }
 }

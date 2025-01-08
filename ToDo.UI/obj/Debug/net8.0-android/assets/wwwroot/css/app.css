@@ -45,7 +45,10 @@ body {
     height: 80px;
     z-index: 1000;
 }
-
+.icon-size-low {
+    font-size: 1.75rem;
+    color: var(--white);
+}
 .icon-size {
     font-size: 2rem;
     color: var(--white);

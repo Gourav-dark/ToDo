@@ -2,7 +2,9 @@
 @inject ITaskService _taskService
 @inject ICategoryService _categoryService
 @inject NavigationManager _navManager
-
+<div class="text-end pe-2 mt-1 mb-0" @onclick="OnDeleteBtnClick">
+    <i class="bi bi-trash3 icon-size-low"></i>
+</div>
 <TaskForm TaskItem="taskItem" Categories="categories" OnTaskSaved="UpdateTaskAsync" IsEditMode="true" />
 
 @code {
@@ -35,6 +37,14 @@
     {
         var response = await _taskService.Update(taskId,task);
 
+        if (response.Succeeded)
+        {
+            _navManager.NavigateTo("/");
+        }
+    }
+    private async Task OnDeleteBtnClick()
+    {
+        var response = await _taskService.Delete(taskId);
         if (response.Succeeded)
         {
             _navManager.NavigateTo("/");

@@ -1,7 +1,9 @@
 ﻿@page "/edit-secure-data/{secureDataId:int}"
 @inject ISecureDataService _secureDataService
 @inject NavigationManager _navManager
-
+<div class="text-end pe-2 mt-1 mb-0" @onclick="OnDeleteBtnClick">
+    <i class="bi bi-trash3 icon-size-low"></i>
+</div>
 <SecureDataForm SecureData="secureData" OnSecureDataSaved="UpdateSecureDataAsync" IsEditMode="true" />
 
 @code {
@@ -35,6 +37,14 @@
         else
         {
             // Handle errors, e.g., show a notification
+        }
+    }
+    private async Task OnDeleteBtnClick()
+    {
+        var response = await _secureDataService.Delete(SecureDataId);
+        if (response.Succeeded)
+        {
+            _navManager.NavigateTo("/securedata");
         }
     }
 }
